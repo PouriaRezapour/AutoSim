@@ -111,12 +111,6 @@ This is an actively developed project (modules are individually versioned in the
 - **FreeRTOS** — MIT License
 - **lwIP** — modified BSD License
 
-Check each component's own license file under `SimLink/Mcal/` before redistributing.
-
-## License
-
-No license has been set for the original SimLink/App/Bsw/Rte code yet. Add a `LICENSE` file at the repository root to specify how others may use this project (e.g. MIT, Apache-2.0, or a proprietary notice if it should stay closed).
-
 ## Author
 
 A. Rezapour (Pouria)
