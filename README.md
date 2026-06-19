@@ -82,7 +82,7 @@ AutoSim/
 
 ### Prerequisites
 - [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
-- A Nucleo-H743ZI board (ST-Link on-board)
+- A Nucleo-H743ZI/H753ZI board (ST-Link on-board)
 - USB cable, and an Ethernet/CAN connection to the PC or DUT depending on which channel you're testing
 
 ### Build & Flash
