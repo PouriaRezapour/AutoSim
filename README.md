@@ -7,8 +7,6 @@
 - **RTOS:** FreeRTOS
 - **Network stack:** lwIP (UDP server, DHCP with static-IP fallback)
 
-> This README was generated from the project source to give the repository a clear entry point. Feel free to adjust the wording or fill in any TODOs to match your own description.
-
 ## Architecture
 
 The application follows a 4-layer split similar to AUTOSAR, keeping hardware details out of application logic:
