@@ -126,7 +126,7 @@ typedef struct
 
   uint8_t use_external_vbus;       /*!< Enable or disable the use of the external VBUS.                        */
 
-} USB_CfgTypeDef;
+} USB_ConfigTypeDef;
 
 typedef struct
 {
@@ -231,7 +231,7 @@ typedef struct
 } USB_HCTypeDef;
 
 typedef USB_ModeTypeDef     USB_OTG_ModeTypeDef;
-typedef USB_CfgTypeDef      USB_OTG_CfgTypeDef;
+typedef USB_ConfigTypeDef      USB_OTG_ConfigTypeDef;
 typedef USB_EPTypeDef       USB_OTG_EPTypeDef;
 typedef USB_URBStateTypeDef USB_OTG_URBStateTypeDef;
 typedef USB_HCStateTypeDef  USB_OTG_HCStateTypeDef;
@@ -496,8 +496,8 @@ typedef USB_HCTypeDef       USB_OTG_HCTypeDef;
   * @{
   */
 #if defined (USB_OTG_FS) || defined (USB_OTG_HS)
-HAL_StatusTypeDef USB_CoreInit(USB_OTG_GlobalTypeDef *USBx, USB_OTG_CfgTypeDef cfg);
-HAL_StatusTypeDef USB_DevInit(USB_OTG_GlobalTypeDef *USBx, USB_OTG_CfgTypeDef cfg);
+HAL_StatusTypeDef USB_CoreInit(USB_OTG_GlobalTypeDef *USBx, USB_OTG_ConfigTypeDef cfg);
+HAL_StatusTypeDef USB_DevInit(USB_OTG_GlobalTypeDef *USBx, USB_OTG_ConfigTypeDef cfg);
 HAL_StatusTypeDef USB_EnableGlobalInt(USB_OTG_GlobalTypeDef *USBx);
 HAL_StatusTypeDef USB_DisableGlobalInt(USB_OTG_GlobalTypeDef *USBx);
 HAL_StatusTypeDef USB_SetTurnaroundTime(USB_OTG_GlobalTypeDef *USBx, uint32_t hclk, uint8_t speed);
@@ -533,7 +533,7 @@ uint32_t          USB_ReadDevAllInEpInterrupt(const USB_OTG_GlobalTypeDef *USBx)
 uint32_t          USB_ReadDevInEPInterrupt(const USB_OTG_GlobalTypeDef *USBx, uint8_t epnum);
 void              USB_ClearInterrupts(USB_OTG_GlobalTypeDef *USBx, uint32_t interrupt);
 
-HAL_StatusTypeDef USB_HostInit(USB_OTG_GlobalTypeDef *USBx, USB_OTG_CfgTypeDef cfg);
+HAL_StatusTypeDef USB_HostInit(USB_OTG_GlobalTypeDef *USBx, USB_OTG_ConfigTypeDef cfg);
 HAL_StatusTypeDef USB_InitFSLSPClkSel(const USB_OTG_GlobalTypeDef *USBx, uint8_t freq);
 HAL_StatusTypeDef USB_ResetPort(const USB_OTG_GlobalTypeDef *USBx);
 HAL_StatusTypeDef USB_DriveVbus(const USB_OTG_GlobalTypeDef *USBx, uint8_t state);

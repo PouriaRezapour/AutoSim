@@ -80,12 +80,12 @@
  * complete and obvious failure of the scheduler.  If this is ever experienced
  * then the volatile qualifier can be inserted in the relevant places within the
  * list structures by simply defining configLIST_VOLATILE to volatile in
- * OS_Config.h (as per the example at the bottom of this comment block).
+ * OS_Cfg.h (as per the example at the bottom of this comment block).
  * If configLIST_VOLATILE is not defined then the preprocessor directives below
  * will simply #define configLIST_VOLATILE away completely.
  *
  * To use volatile list structure members then add the following line to
- * OS_Config.h (without the quotes):
+ * OS_Cfg.h (without the quotes):
  * "#define configLIST_VOLATILE volatile"
  */
 #ifndef configLIST_VOLATILE

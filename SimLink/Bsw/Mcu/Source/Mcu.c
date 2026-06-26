@@ -1,6 +1,6 @@
 /**
  * @file    Mcu.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-18
  * @version 0.1.2
  * @brief   System initialisation implementation (clocks, MPU, cache, BSP).

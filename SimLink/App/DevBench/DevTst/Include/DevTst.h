@@ -1,8 +1,8 @@
 /**
  * @file    DevTst.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-07
- * @version 0.2.3
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-08
+ * @version 0.2.6
  * @brief   Development test framework — top-level public interface.
  *
  * @details
@@ -14,7 +14,7 @@
  * The only file that should include this header is Rte_DevTst.c.
  * No other module should depend on DevTst.h directly.
  *
- * Compile-time gate: DEVTST_ENABLED must be 1 in DevTst_Config.h for any
+ * Compile-time gate: DEVTST_ENABLED must be 1 in DevTst_Cfg.h for any
  * code in this module to be compiled.  When 0, all public functions become
  * empty macros so that call sites require no conditional compilation.
  *
@@ -26,6 +26,8 @@
  * | 0.2.3   | 2025-06-07 | A.Rezapour       | The module now uses the project's    |
  * |         |            |                  | standard types defined in            |
  * |         |            |                  | Std_Types.h.                         |
+ * | 0.2.6   | 2025-07-08 | A.Rezapour       | Added DevTst_Run_100ms() for the     |
+ * |         |            |                  | DioFlip module.                      |
  * |---------|------------|------------------|--------------------------------------|
  */
 
@@ -35,18 +37,18 @@
 /* ─── Includes ────────────────────────────────────────────────────────────── */
 
 #include "Std_Types.h"
-#include "DevTst_Config.h"
+#include "DevTst_Cfg.h"
 
 /* ─── Module Info ─────────────────────────────────────────────────────────── */
 
-#define DEVTST_VENDOR_ID               0xFFFFu   /* Project vendor identifier  */
-#define DEVTST_MODULE_ID               2050u      /* DevTst framework module ID */
+#define DEVTST_VENDOR_ID               0xFFFFu   /**< Project vendor identifier  */
+#define DEVTST_MODULE_ID               2050u      /**< DevTst framework module ID */
 
 /* ─── Version Info ────────────────────────────────────────────────────────── */
 
 #define DEVTST_MAJOR_VERSION           0x00u
 #define DEVTST_MINOR_VERSION           0x02u
-#define DEVTST_PATCH_VERSION           0x03u
+#define DEVTST_PATCH_VERSION           0x04u
 
 /* ─── Macros & Constants ──────────────────────────────────────────────────── */
 
@@ -78,10 +80,18 @@ void DevTst_Init(void);
  */
 void DevTst_Run_10ms(void);
 
+/**
+ * @brief  100 ms periodic execution entry point for the DevTst framework.
+ * @note   Called every 100 ms from Rte_Runnable_DevTst_100ms().
+ *         Delegates to DevTstMgr_Run_100ms().
+ */
+void DevTst_Run_100ms(void);
+
 #else /* DEVTST_ENABLED == 0 */
 
 #define DevTst_Init()              ((void)0)
 #define DevTst_Run_10ms()          ((void)0)
+#define DevTst_Run_100ms()         ((void)0)
 
 #endif /* DEVTST_ENABLED */
 

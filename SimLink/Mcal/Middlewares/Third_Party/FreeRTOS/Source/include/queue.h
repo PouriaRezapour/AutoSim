@@ -1441,7 +1441,7 @@ BaseType_t xQueueGiveMutexRecursive( QueueHandle_t xMutex ) PRIVILEGED_FUNCTION;
  *
  * configQUEUE_REGISTRY_SIZE defines the maximum number of handles the
  * registry can hold.  configQUEUE_REGISTRY_SIZE must be greater than 0
- * within OS_Config.h for the registry to be available.  Its value
+ * within OS_Cfg.h for the registry to be available.  Its value
  * does not effect the number of queues, semaphores and mutexes that can be
  * created - just the number that the registry can hold.
  *

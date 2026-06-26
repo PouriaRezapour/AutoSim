@@ -1,6 +1,6 @@
 /**
  * @file    Os.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Operating System abstraction layer implementation.
@@ -26,7 +26,7 @@
 /* ─── Includes ────────────────────────────────────────────────────────────── */
 
 #include "Os.h"
-#include "Os_TasksConfig.h"
+#include "Os_TasksCfg.h"
 #include "Os_CyclicTasks.h"
 #include "Rte_Scheduler.h"
 #include "Std_Types.h"

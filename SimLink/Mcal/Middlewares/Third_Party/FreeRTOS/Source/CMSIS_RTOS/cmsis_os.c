@@ -159,7 +159,7 @@ osStatus osKernelStart (void)
 * @param  None
 * @retval (0) RTOS is not started
 *         (1) RTOS is started
-*         (-1) if this feature is disabled in OS_Config.h 
+*         (-1) if this feature is disabled in OS_Cfg.h 
 * @note  MUST REMAIN UNCHANGED: \b osKernelRunning shall be consistent in every CMSIS-RTOS.
 */
 int32_t osKernelRunning(void)

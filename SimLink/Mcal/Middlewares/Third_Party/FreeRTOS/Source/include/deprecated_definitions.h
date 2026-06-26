@@ -210,7 +210,7 @@ projects should not use them. */
 
 #ifdef BCC_INDUSTRIAL_PC_PORT
 	/* A short file name has to be used in place of the normal
-	OS_Config.h when using the Borland compiler. */
+	OS_Cfg.h when using the Borland compiler. */
 	#include "frconfig.h"
 	#include "..\portable\BCC\16BitDOS\PC\prtmacro.h"
     typedef void ( __interrupt __far *pxISR )();
@@ -218,7 +218,7 @@ projects should not use them. */
 
 #ifdef BCC_FLASH_LITE_186_PORT
 	/* A short file name has to be used in place of the normal
-	OS_Config.h when using the Borland compiler. */
+	OS_Cfg.h when using the Borland compiler. */
 	#include "frconfig.h"
 	#include "..\portable\BCC\16BitDOS\flsh186\prtmacro.h"
     typedef void ( __interrupt __far *pxISR )();

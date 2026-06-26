@@ -35,7 +35,7 @@
 typedef void (*TaskFunction_t)( void * );
 
 /* Converts a time in milliseconds to a time in ticks.  This macro can be
-overridden by a macro of the same name defined in OS_Config.h in case the
+overridden by a macro of the same name defined in OS_Cfg.h in case the
 definition here is not suitable for your application. */
 #ifndef pdMS_TO_TICKS
 	#define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( TickType_t ) ( xTimeInMs ) * ( TickType_t ) configTICK_RATE_HZ ) / ( TickType_t ) 1000 ) )

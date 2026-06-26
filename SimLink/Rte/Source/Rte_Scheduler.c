@@ -1,6 +1,6 @@
 /**
  * @file    Rte_Scheduler.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   RTE Scheduler — maps OS tasks to SWC runnables.
@@ -22,6 +22,10 @@
  * | 0.2.0   | 2025-05-23 | A.Rezapour       | Added Can_Test_Tx_10ms to 10ms slot |
  * | 0.2.1   | 2025-05-26 | A.Rezapour       | Moved CAN test to DevTst framework  |
  * | 0.2.3   | 2025-06-07 | A.Rezapour       | Integrate Std_Types.h               |
+ * | 0.2.5   | 2025-07-01 | A.Rezapour       | Added VlvSigObs and CmdSigMgr 50ms  |
+ * |         |            |                  | runnables                           |
+ * | 0.2.6   | 2025-07-08 | A.Rezapour       | New DevTst 100ms runnable which has |
+ * |         |            |                  | the DioFlip test                    |
  * |---------|------------|------------------|-------------------------------------|
  */
 
@@ -29,7 +33,10 @@
 
 #include "Std_Types.h"
 #include "Rte_Scheduler.h"
+
 #include "Rte_Hmi.h"
+#include "Rte_CmdSigMgr.h"
+#include "Rte_VlvSigObs.h"
 #include "Rte_Eth.h"
 #include "Rte_DevTst.h"
 
@@ -62,10 +69,14 @@ void Rte_Scheduler_20ms(void)
 
 void Rte_Scheduler_50ms(void)
 {
+    Rte_Runnable_VlvSigObs_50ms();
+    Rte_Runnable_CmdSigMgr_50ms();
+
 }
 
 void Rte_Scheduler_100ms(void)
 {
+	Rte_Runnable_DevTst_100ms();
 }
 
 void Rte_Scheduler_Background(void)

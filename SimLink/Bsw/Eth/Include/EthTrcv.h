@@ -1,6 +1,6 @@
 /**
  * @file    EthTrcv.h
- * @author  Ali Rezapour
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-10
  * @version 0.1.0
  * @brief   Function prototypes and definitions for the LAN8742 PHY transceiver driver.
@@ -16,7 +16,7 @@
  * |---------|------------|---------------|--------------------------------------|
  * | Version | Date       | Author        | Description                          |
  * |---------|------------|---------------|--------------------------------------|
- * | 0.1.0   | 2025-05-10 | Ali Rezapour  | Initial release                      |
+ * | 0.1.0   | 2025-05-10 | A.Rezapour    | Initial release                      |
  * |---------|------------|---------------|--------------------------------------|
  */
 

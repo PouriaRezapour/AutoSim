@@ -40,46 +40,6 @@
 			<locationURI>MAIN_LOC/Source/main.c</locationURI>
 		</link>
 		<link>
-			<name>Doc/Release Notes/SenSim_RN_v0.1.0.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SenSim_RN_v0.1.0.pdf</locationURI>
-		</link>
-		<link>
-			<name>Doc/Release Notes/SimLink_RN_v0.1.1.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SimLink_RN_v0.1.1.pdf</locationURI>
-		</link>
-		<link>
-			<name>Doc/Release Notes/SimLink_RN_v0.1.2.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SimLink_RN_v0.1.2.pdf</locationURI>
-		</link>
-		<link>
-			<name>Doc/Release Notes/SimLink_RN_v0.1.3.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SimLink_RN_v0.1.3.pdf</locationURI>
-		</link>
-		<link>
-			<name>Doc/Release Notes/SimLink_RN_v0.2.0.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SimLink_RN_v0.2.0.pdf</locationURI>
-		</link>
-		<link>
-			<name>Doc/Release Notes/SimLink_RN_v0.2.1.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SimLink_RN_v0.2.1.pdf</locationURI>
-		</link>
-		<link>
-			<name>Doc/Release Notes/SimLink_RN_v0.2.2.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SimLink_RN_v0.2.2.pdf</locationURI>
-		</link>
-		<link>
-			<name>Doc/Release Notes/SimLink_RN_v0.2.3.pdf</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Release%20Notes/SimLink_RN_v0.2.3.pdf</locationURI>
-		</link>
-		<link>
 			<name>SimLink/Rte/Rte_Buffers.c</name>
 			<type>1</type>
 			<locationURI>RTE_LOC/Source/Rte_Buffers.c</locationURI>
@@ -88,11 +48,6 @@
 			<name>SimLink/Rte/Rte_Scheduler.c</name>
 			<type>1</type>
 			<locationURI>RTE_LOC/Source/Rte_Scheduler.c</locationURI>
-		</link>
-		<link>
-			<name>Doc/Templates/Naming Conventions/NamingConvention.c</name>
-			<type>1</type>
-			<locationURI>AUTOSIM_LOC/Doc/Templates/Naming%20Conventions/NamingConvention.c</locationURI>
 		</link>
 		<link>
 			<name>SimLink/Bsw/Can/Can.c</name>
@@ -105,14 +60,24 @@
 			<locationURI>BSW_LOC/Can/Source/Can_HwAb.c</locationURI>
 		</link>
 		<link>
+			<name>SimLink/Bsw/Det/Det.c</name>
+			<type>1</type>
+			<locationURI>BSW_LOC/Det/Source/Det.c</locationURI>
+		</link>
+		<link>
 			<name>SimLink/Bsw/Dio/Dio.c</name>
 			<type>1</type>
 			<locationURI>BSW_LOC/Dio/Source/Dio.c</locationURI>
 		</link>
 		<link>
-			<name>SimLink/Bsw/Dio/Dio_HwAb.c</name>
+			<name>SimLink/Bsw/Dio/DioIf.c</name>
 			<type>1</type>
-			<locationURI>BSW_LOC/Dio/Source/Dio_HwAb.c</locationURI>
+			<locationURI>BSW_LOC/Dio/Source/DioIf.c</locationURI>
+		</link>
+		<link>
+			<name>SimLink/Bsw/Dio/Dio_Cfg.c</name>
+			<type>1</type>
+			<locationURI>BSW_LOC/Dio/Source/Dio_Cfg.c</locationURI>
 		</link>
 		<link>
 			<name>SimLink/Bsw/Eth/EthTrcv.c</name>
@@ -180,6 +145,21 @@
 			<locationURI>BSW_LOC/Port/Source/Port.c</locationURI>
 		</link>
 		<link>
+			<name>SimLink/Bsw/Port/Port_Cfg.c</name>
+			<type>1</type>
+			<locationURI>BSW_LOC/Port/Source/Port_Cfg.c</locationURI>
+		</link>
+		<link>
+			<name>SimLink/Ext/DioExt/DioExt.c</name>
+			<type>1</type>
+			<locationURI>EXT_LOC/DioExt/Common/Source/DioExt.c</locationURI>
+		</link>
+		<link>
+			<name>SimLink/Rte/Rte_AppIf/Rte_CmdSigMgr.c</name>
+			<type>1</type>
+			<locationURI>RTE_LOC/Source/Rte_CmdSigMgr.c</locationURI>
+		</link>
+		<link>
 			<name>SimLink/Rte/Rte_AppIf/Rte_DevTst.c</name>
 			<type>1</type>
 			<locationURI>RTE_LOC/Source/Rte_DevTst.c</locationURI>
@@ -193,6 +173,11 @@
 			<name>SimLink/Rte/Rte_AppIf/Rte_PcComMgr.c</name>
 			<type>1</type>
 			<locationURI>RTE_LOC/Source/Rte_PcComMgr.c</locationURI>
+		</link>
+		<link>
+			<name>SimLink/Rte/Rte_AppIf/Rte_VlvSigObs.c</name>
+			<type>1</type>
+			<locationURI>RTE_LOC/Source/Rte_VlvSigObs.c</locationURI>
 		</link>
 		<link>
 			<name>SimLink/Rte/Rte_BswIf/Rte_Eth.c</name>
@@ -220,14 +205,34 @@
 			<locationURI>APP_LOC/DevBench/DevTst/Source/DevTst_CanTx.c</locationURI>
 		</link>
 		<link>
+			<name>SimLink/App/DevBench/DevTst/DevTst_DioFlip.c</name>
+			<type>1</type>
+			<locationURI>APP_LOC/DevBench/DevTst/Source/DevTst_DioFlip.c</locationURI>
+		</link>
+		<link>
+			<name>SimLink/App/SenSim/CmdSigMgr/CmdSigMgr.c</name>
+			<type>1</type>
+			<locationURI>APP_LOC/SenSim/CmdSigMgr/Source/CmdSigMgr.c</locationURI>
+		</link>
+		<link>
 			<name>SimLink/App/SenSim/Hmi/Hmi.c</name>
 			<type>1</type>
 			<locationURI>APP_LOC/SenSim/Hmi/Source/Hmi.c</locationURI>
 		</link>
 		<link>
-			<name>SimLink/App/SenSim/MsgTblSim/MsgTbl.c</name>
+			<name>SimLink/App/SenSim/VlvSigObs/VlvSigObs.c</name>
 			<type>1</type>
-			<locationURI>APP_LOC/SenSim/MsgTblSim/Source/MsgTbl.c</locationURI>
+			<locationURI>APP_LOC/SenSim/VlvSigObs/Source/VlvSigObs.c</locationURI>
+		</link>
+		<link>
+			<name>SimLink/Ext/CanExt/MsgTblSim/MsgTbl.c</name>
+			<type>1</type>
+			<locationURI>EXT_LOC/CanExt/MsgTblSim/Source/MsgTbl.c</locationURI>
+		</link>
+		<link>
+			<name>SimLink/Ext/DioExt/EscDioExt/EscDioExt.c</name>
+			<type>1</type>
+			<locationURI>EXT_LOC/DioExt/EscDioExt/Source/EscDioExt.c</locationURI>
 		</link>
 		<link>
 			<name>SimLink/Mcal/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.c</name>
@@ -390,9 +395,9 @@
 			<locationURI>MCAL_LOC/middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
 		</link>
 		<link>
-			<name>SimLink/App/SenSim/MsgTblSim/MsgTbl_Ikco/MsgTbl_Ikco.c</name>
+			<name>SimLink/Ext/CanExt/MsgTblSim/MsgTbl_Ikco/MsgTbl_Ikco.c</name>
 			<type>1</type>
-			<locationURI>APP_LOC/SenSim/MsgTblSim/Source/MsgTbl_Ikco.c</locationURI>
+			<locationURI>PARENT-1-BSW_LOC/Ext/CanExt/MsgTblSim/Source/MsgTbl_Ikco.c</locationURI>
 		</link>
 		<link>
 			<name>SimLink/Mcal/Drivers/BSP/STM32H743ZI-Nucleo/stm32h7xx_nucleo.c</name>
@@ -606,6 +611,10 @@
 		<variable>
 			<name>COMMON_LOC</name>
 			<value>file:/C:/Users/ar128519/STM32CubeIDE/workspace_1.19.0/AutoSim/SimLink/Common</value>
+		</variable>
+		<variable>
+			<name>EXT_LOC</name>
+			<value>file:/C:/Users/ar128519/STM32CubeIDE/workspace_1.19.0/AutoSim/SimLink/Ext</value>
 		</variable>
 		<variable>
 			<name>MAIN_LOC</name>

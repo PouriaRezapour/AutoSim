@@ -81,7 +81,7 @@ StreamBufferHandle_t xStreamBufferCreate( size_t xBufferSizeBytes, size_t xTrigg
  * memory (memory that is allocated at compile time).
  *
  * configSUPPORT_DYNAMIC_ALLOCATION must be set to 1 or left undefined in
- * OS_Config.h for xStreamBufferCreate() to be available.
+ * OS_Cfg.h for xStreamBufferCreate() to be available.
  *
  * @param xBufferSizeBytes The total number of bytes the stream buffer will be
  * able to hold at any one time.
@@ -148,7 +148,7 @@ StreamBufferHandle_t xStreamBufferCreateStatic( size_t xBufferSizeBytes,
  * Creates a new stream buffer using statically allocated memory.  See
  * xStreamBufferCreate() for a version that uses dynamically allocated memory.
  *
- * configSUPPORT_STATIC_ALLOCATION must be set to 1 in OS_Config.h for
+ * configSUPPORT_STATIC_ALLOCATION must be set to 1 in OS_Cfg.h for
  * xStreamBufferCreateStatic() to be available.
  *
  * @param xBufferSizeBytes The size, in bytes, of the buffer pointed to by the
@@ -265,7 +265,7 @@ size_t xStreamBufferSend( StreamBufferHandle_t xStreamBuffer,
  * macro pdMS_TO_TICKS() can be used to convert a time specified in milliseconds
  * into a time specified in ticks.  Setting xTicksToWait to portMAX_DELAY will
  * cause the task to wait indefinitely (without timing out), provided
- * INCLUDE_vTaskSuspend is set to 1 in OS_Config.h.  If a task times out
+ * INCLUDE_vTaskSuspend is set to 1 in OS_Cfg.h.  If a task times out
  * before it can write all xDataLengthBytes into the buffer it will still write
  * as many bytes as possible.  A task does not use any CPU time when it is in
  * the blocked state.
@@ -465,7 +465,7 @@ size_t xStreamBufferReceive( StreamBufferHandle_t xStreamBuffer,
  * be used to convert a time specified in milliseconds into a time specified in
  * ticks.  Setting xTicksToWait to portMAX_DELAY will cause the task to wait
  * indefinitely (without timing out), provided INCLUDE_vTaskSuspend is set to 1
- * in OS_Config.h.  A task does not use any CPU time when it is in the
+ * in OS_Cfg.h.  A task does not use any CPU time when it is in the
  * Blocked state.
  *
  * @return The number of bytes actually read from the stream buffer, which will

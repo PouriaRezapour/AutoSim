@@ -9,7 +9,7 @@
  *
  * To use this file:
  *
- *    1) Copy this file into the directory that contains your OS_Config.h
+ *    1) Copy this file into the directory that contains your OS_Cfg.h
  *       header file, as that directory will already be in the compilers include
  *       path.
  *

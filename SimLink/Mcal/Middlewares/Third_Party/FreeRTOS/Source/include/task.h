@@ -141,8 +141,8 @@ typedef struct xTASK_STATUS
 	UBaseType_t xTaskNumber;		/* A number unique to the task. */
 	eTaskState eCurrentState;		/* The state in which the task existed when the structure was populated. */
 	UBaseType_t uxCurrentPriority;	/* The priority at which the task was running (may be inherited) when the structure was populated. */
-	UBaseType_t uxBasePriority;		/* The priority to which the task will return if the task's current priority has been inherited to avoid unbounded priority inversion when obtaining a mutex.  Only valid if configUSE_MUTEXES is defined as 1 in OS_Config.h. */
-	uint32_t ulRunTimeCounter;		/* The total run time allocated to the task so far, as defined by the run time stats clock.  See http://www.freertos.org/rtos-run-time-stats.html.  Only valid when configGENERATE_RUN_TIME_STATS is defined as 1 in OS_Config.h. */
+	UBaseType_t uxBasePriority;		/* The priority to which the task will return if the task's current priority has been inherited to avoid unbounded priority inversion when obtaining a mutex.  Only valid if configUSE_MUTEXES is defined as 1 in OS_Cfg.h. */
+	uint32_t ulRunTimeCounter;		/* The total run time allocated to the task so far, as defined by the run time stats clock.  See http://www.freertos.org/rtos-run-time-stats.html.  Only valid when configGENERATE_RUN_TIME_STATS is defined as 1 in OS_Cfg.h. */
 	StackType_t *pxStackBase;		/* Points to the lowest address of the task's stack area. */
 	configSTACK_DEPTH_TYPE usStackHighWaterMark;	/* The minimum amount of stack space that has remained for the task since the task was created.  The closer this value is to zero the closer the task has come to overflowing its stack. */
 } TaskStatus_t;
@@ -363,7 +363,7 @@ is used in assert() statements. */
  *
  * @param pcName A descriptive name for the task.  This is mainly used to
  * facilitate debugging.  The maximum length of the string is defined by
- * configMAX_TASK_NAME_LEN in OS_Config.h.
+ * configMAX_TASK_NAME_LEN in OS_Cfg.h.
  *
  * @param ulStackDepth The size of the task stack specified as the number of
  * variables the stack can hold - not the number of bytes.  For example, if
@@ -820,7 +820,7 @@ void vTaskDelayUntil( TickType_t * const pxPreviousWakeTime, const TickType_t xT
  * task. h
  * <pre>BaseType_t xTaskAbortDelay( TaskHandle_t xTask );</pre>
  *
- * INCLUDE_xTaskAbortDelay must be defined as 1 in OS_Config.h for this
+ * INCLUDE_xTaskAbortDelay must be defined as 1 in OS_Cfg.h for this
  * function to be available.
  *
  * A task will enter the Blocked state when it is waiting for an event.  The
@@ -1407,7 +1407,7 @@ char *pcTaskGetName( TaskHandle_t xTaskToQuery ) PRIVILEGED_FUNCTION; /*lint !e9
  *
  * @return The handle of the task that has the human readable name pcNameToQuery.
  * NULL is returned if no matching name is found.  INCLUDE_xTaskGetHandle
- * must be set to 1 in OS_Config.h for pcTaskGetHandle() to be available.
+ * must be set to 1 in OS_Cfg.h for pcTaskGetHandle() to be available.
  *
  * \defgroup pcTaskGetHandle pcTaskGetHandle
  * \ingroup TaskUtils
@@ -1418,7 +1418,7 @@ TaskHandle_t xTaskGetHandle( const char *pcNameToQuery ) PRIVILEGED_FUNCTION; /*
  * task.h
  * <PRE>UBaseType_t uxTaskGetStackHighWaterMark( TaskHandle_t xTask );</PRE>
  *
- * INCLUDE_uxTaskGetStackHighWaterMark must be set to 1 in OS_Config.h for
+ * INCLUDE_uxTaskGetStackHighWaterMark must be set to 1 in OS_Cfg.h for
  * this function to be available.
  *
  * Returns the high water mark of the stack associated with xTask.  That is,
@@ -1445,7 +1445,7 @@ UBaseType_t uxTaskGetStackHighWaterMark( TaskHandle_t xTask ) PRIVILEGED_FUNCTIO
  * task.h
  * <PRE>configSTACK_DEPTH_TYPE uxTaskGetStackHighWaterMark2( TaskHandle_t xTask );</PRE>
  *
- * INCLUDE_uxTaskGetStackHighWaterMark2 must be set to 1 in OS_Config.h for
+ * INCLUDE_uxTaskGetStackHighWaterMark2 must be set to 1 in OS_Cfg.h for
  * this function to be available.
  *
  * Returns the high water mark of the stack associated with xTask.  That is,
@@ -1510,7 +1510,7 @@ constant. */
 #if( configNUM_THREAD_LOCAL_STORAGE_POINTERS > 0 )
 
 	/* Each task contains an array of pointers that is dimensioned by the
-	configNUM_THREAD_LOCAL_STORAGE_POINTERS setting in OS_Config.h.  The
+	configNUM_THREAD_LOCAL_STORAGE_POINTERS setting in OS_Cfg.h.  The
 	kernel does not use the pointers itself, so the application writer can use
 	the pointers for any purpose they wish.  The following two functions are
 	used to set and query a pointer respectively. */
@@ -1534,7 +1534,7 @@ BaseType_t xTaskCallApplicationTaskHook( TaskHandle_t xTask, void *pvParameter )
 
 /**
  * xTaskGetIdleTaskHandle() is only available if
- * INCLUDE_xTaskGetIdleTaskHandle is set to 1 in OS_Config.h.
+ * INCLUDE_xTaskGetIdleTaskHandle is set to 1 in OS_Cfg.h.
  *
  * Simply returns the handle of the idle task.  It is not valid to call
  * xTaskGetIdleTaskHandle() before the scheduler has been started.
@@ -1542,7 +1542,7 @@ BaseType_t xTaskCallApplicationTaskHook( TaskHandle_t xTask, void *pvParameter )
 TaskHandle_t xTaskGetIdleTaskHandle( void ) PRIVILEGED_FUNCTION;
 
 /**
- * configUSE_TRACE_FACILITY must be defined as 1 in OS_Config.h for
+ * configUSE_TRACE_FACILITY must be defined as 1 in OS_Cfg.h for
  * uxTaskGetSystemState() to be available.
  *
  * uxTaskGetSystemState() populates an TaskStatus_t structure for each task in
@@ -1565,7 +1565,7 @@ TaskHandle_t xTaskGetIdleTaskHandle( void ) PRIVILEGED_FUNCTION;
  * number of bytes in the array.
  *
  * @param pulTotalRunTime If configGENERATE_RUN_TIME_STATS is set to 1 in
- * OS_Config.h then *pulTotalRunTime is set by uxTaskGetSystemState() to the
+ * OS_Cfg.h then *pulTotalRunTime is set by uxTaskGetSystemState() to the
  * total run time (as defined by the run time stats clock, see
  * http://www.freertos.org/rtos-run-time-stats.html) since the target booted.
  * pulTotalRunTime can be set to NULL to omit the total run time information.

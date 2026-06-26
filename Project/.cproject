@@ -59,7 +59,6 @@
 									<listOptionValue builtIn="false" value="&quot;../..\SimLink\App\DevBench\DevTst\Include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../..\SimLink\App\SenSim\CmdSigMgr\Include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../..\SimLink\App\SenSim\Hmi\Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../..\SimLink\App\SenSim\MsgTblSim\Include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../..\SimLink\App\SenSim\VlvSigObs\Include&quot;"/>
 									<listOptionValue builtIn="false" value="../../SimLink/Main/Include"/>
 									<listOptionValue builtIn="false" value="../../SimLink/Common/Include"/>
@@ -75,6 +74,12 @@
 									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Bsw\Sys\Include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Mcal\Mcal\Include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Rte\Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Ext\CanExt\MsgTblSim\Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Ext\DioExt\Common\Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Ext\CanExt\Common\Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Ext\DioExt\EscDioExt\Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Ext\DioExt\Common\Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../..\SimLink\Ext\DioExt\EscDioExt\Source&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1326190995" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>

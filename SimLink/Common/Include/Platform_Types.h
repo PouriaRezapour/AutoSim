@@ -1,7 +1,7 @@
 /**
  * @file    Platform_Types.h
- * @author  Ali Rezapour
- * @date    2025-06-13
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-06-23
  * @version 0.2.4
  * @brief   Platform and compiler dependent type definitions.
  *
@@ -14,7 +14,7 @@
  * |---------|------------|------------------|---------------------|
  * | Version | Date       | Author           | Description         |
  * |---------|------------|------------------|---------------------|
- * | 0.2.4   | 2025-06-13 | Ali Rezapour     | Initial version     |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial version     |
  * |---------|------------|------------------|---------------------|
  */
 

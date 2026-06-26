@@ -53,7 +53,7 @@ extern "C" {
 #endif
 
 /* Application specific configuration options. */
-#include "OS_Config.h"
+#include "OS_Cfg.h"
 
 /* Basic FreeRTOS definitions. */
 #include "projdefs.h"
@@ -73,15 +73,15 @@ extern "C" {
 /*
  * Check all the required application specific macros have been defined.
  * These macros are application specific and (as downloaded) are defined
- * within OS_Config.h.
+ * within OS_Cfg.h.
  */
 
 #ifndef configMINIMAL_STACK_SIZE
-	#error Missing definition:  configMINIMAL_STACK_SIZE must be defined in OS_Config.h.  configMINIMAL_STACK_SIZE defines the size (in words) of the stack allocated to the idle task.  Refer to the demo project provided for your port for a suitable value.
+	#error Missing definition:  configMINIMAL_STACK_SIZE must be defined in OS_Cfg.h.  configMINIMAL_STACK_SIZE defines the size (in words) of the stack allocated to the idle task.  Refer to the demo project provided for your port for a suitable value.
 #endif
 
 #ifndef configMAX_PRIORITIES
-	#error Missing definition:  configMAX_PRIORITIES must be defined in OS_Config.h.  See the Configuration section of the FreeRTOS API documentation for details.
+	#error Missing definition:  configMAX_PRIORITIES must be defined in OS_Cfg.h.  See the Configuration section of the FreeRTOS API documentation for details.
 #endif
 
 #if configMAX_PRIORITIES < 1
@@ -89,19 +89,19 @@ extern "C" {
 #endif
 
 #ifndef configUSE_PREEMPTION
-	#error Missing definition:  configUSE_PREEMPTION must be defined in OS_Config.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
+	#error Missing definition:  configUSE_PREEMPTION must be defined in OS_Cfg.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
 #endif
 
 #ifndef configUSE_IDLE_HOOK
-	#error Missing definition:  configUSE_IDLE_HOOK must be defined in OS_Config.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
+	#error Missing definition:  configUSE_IDLE_HOOK must be defined in OS_Cfg.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
 #endif
 
 #ifndef configUSE_TICK_HOOK
-	#error Missing definition:  configUSE_TICK_HOOK must be defined in OS_Config.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
+	#error Missing definition:  configUSE_TICK_HOOK must be defined in OS_Cfg.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
 #endif
 
 #ifndef configUSE_16_BIT_TICKS
-	#error Missing definition:  configUSE_16_BIT_TICKS must be defined in OS_Config.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
+	#error Missing definition:  configUSE_16_BIT_TICKS must be defined in OS_Cfg.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
 #endif
 
 #ifndef configUSE_CO_ROUTINES
@@ -231,7 +231,7 @@ extern "C" {
 #endif
 
 #if configMAX_TASK_NAME_LEN < 1
-	#error configMAX_TASK_NAME_LEN must be set to a minimum of 1 in OS_Config.h
+	#error configMAX_TASK_NAME_LEN must be set to a minimum of 1 in OS_Cfg.h
 #endif
 
 #ifndef configASSERT
@@ -854,13 +854,13 @@ hold explicit before calling the code. */
 
 #ifndef configSTACK_DEPTH_TYPE
 	/* Defaults to uint16_t for backward compatibility, but can be overridden
-	in OS_Config.h if uint16_t is too restrictive. */
+	in OS_Cfg.h if uint16_t is too restrictive. */
 	#define configSTACK_DEPTH_TYPE uint16_t
 #endif
 
 #ifndef configMESSAGE_BUFFER_LENGTH_TYPE
 	/* Defaults to size_t for backward compatibility, but can be overridden
-	in OS_Config.h if lengths will always be less than the number of bytes
+	in OS_Cfg.h if lengths will always be less than the number of bytes
 	in a size_t. */
 	#define configMESSAGE_BUFFER_LENGTH_TYPE size_t
 #endif
@@ -1003,12 +1003,12 @@ the Secure Side only. */
 	#define configRUN_FREERTOS_SECURE_ONLY 0
 #endif
 
-/* Sometimes the OS_Config.h settings only allow a task to be created using
+/* Sometimes the OS_Cfg.h settings only allow a task to be created using
  * dynamically allocated RAM, in which case when any task is deleted it is known
  * that both the task's stack and TCB need to be freed.  Sometimes the
- * OS_Config.h settings only allow a task to be created using statically
+ * OS_Cfg.h settings only allow a task to be created using statically
  * allocated RAM, in which case when any task is deleted it is known that neither
- * the task's stack or TCB should be freed.  Sometimes the OS_Config.h
+ * the task's stack or TCB should be freed.  Sometimes the OS_Cfg.h
  * settings allow a task to be created using either statically or dynamically
  * allocated RAM, in which case a member of the TCB is used to record whether the
  * stack and/or TCB were allocated statically or dynamically, so when a task is
@@ -1105,7 +1105,7 @@ typedef struct xSTATIC_LIST
  * the size of the task object needs to be know.  The StaticTask_t structure
  * below is provided for this purpose.  Its sizes and alignment requirements are
  * guaranteed to match those of the genuine structure, no matter which
- * architecture is being used, and no matter how the values in OS_Config.h
+ * architecture is being used, and no matter how the values in OS_Cfg.h
  * are set.  Its contents are somewhat obfuscated in the hope users will
  * recognise that it would be unwise to make direct use of the structure members.
  */
@@ -1169,7 +1169,7 @@ typedef struct xSTATIC_TCB
  * structure below is provided for this purpose.  Its sizes and alignment
  * requirements are guaranteed to match those of the genuine structure, no
  * matter which architecture is being used, and no matter how the values in
- * OS_Config.h are set.  Its contents are somewhat obfuscated in the hope
+ * OS_Cfg.h are set.  Its contents are somewhat obfuscated in the hope
  * users will recognise that it would be unwise to make direct use of the
  * structure members.
  */
@@ -1213,7 +1213,7 @@ typedef StaticQueue_t StaticSemaphore_t;
  * know.  The StaticEventGroup_t structure below is provided for this purpose.
  * Its sizes and alignment requirements are guaranteed to match those of the
  * genuine structure, no matter which architecture is being used, and no matter
- * how the values in OS_Config.h are set.  Its contents are somewhat
+ * how the values in OS_Cfg.h are set.  Its contents are somewhat
  * obfuscated in the hope users will recognise that it would be unwise to make
  * direct use of the structure members.
  */
@@ -1242,7 +1242,7 @@ typedef struct xSTATIC_EVENT_GROUP
  * The StaticTimer_t structure below is provided for this purpose.  Its sizes
  * and alignment requirements are guaranteed to match those of the genuine
  * structure, no matter which architecture is being used, and no matter how the
- * values in OS_Config.h are set.  Its contents are somewhat obfuscated in
+ * values in OS_Cfg.h are set.  Its contents are somewhat obfuscated in
  * the hope users will recognise that it would be unwise to make direct use of
  * the structure members.
  */
@@ -1270,7 +1270,7 @@ typedef struct xSTATIC_TIMER
 * know.  The StaticStreamBuffer_t structure below is provided for this purpose.
 * Its size and alignment requirements are guaranteed to match those of the
 * genuine structure, no matter which architecture is being used, and no matter
-* how the values in OS_Config.h are set.  Its contents are somewhat
+* how the values in OS_Cfg.h are set.  Its contents are somewhat
 * obfuscated in the hope users will recognise that it would be unwise to make
 * direct use of the structure members.
 */

@@ -258,7 +258,7 @@ typedef struct
   uint32_t Req2AckTime;            /*!< It indicates the minimum switching duration (in number of clock cycles) expected
                                         if some signals are multiplexed in the OSPI IO Manager with the other OSPI.
                                         This parameter can be a value between 1 and 256 */
-} OSPIM_CfgTypeDef;
+} OSPIM_ConfigTypeDef;
 
 #if defined (USE_HAL_OSPI_REGISTER_CALLBACKS) && (USE_HAL_OSPI_REGISTER_CALLBACKS == 1U)
 /**
@@ -875,7 +875,7 @@ uint32_t              HAL_OSPI_GetState(const OSPI_HandleTypeDef *hospi);
 /** @addtogroup OSPI_Exported_Functions_Group4
   * @{
   */
-HAL_StatusTypeDef     HAL_OSPIM_Config(OSPI_HandleTypeDef *hospi, OSPIM_CfgTypeDef *cfg, uint32_t Timeout);
+HAL_StatusTypeDef     HAL_OSPIM_Config(OSPI_HandleTypeDef *hospi, OSPIM_ConfigTypeDef *cfg, uint32_t Timeout);
 
 /**
   * @}

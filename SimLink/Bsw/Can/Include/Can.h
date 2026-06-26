@@ -1,6 +1,6 @@
 /**
  * @file    Can.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Public interface for the CAN driver module.
@@ -9,7 +9,7 @@
  * Exposes initialisation, start, single-frame transmit, and receive
  * functions for the FDCAN peripheral operating in Classic CAN mode on
  * the STM32H7.  Clock configuration is intentionally excluded; it is
- * handled by the project-level SystemClock_Config().
+ * handled by the project-level SystemClock_Cfg().
  * The module now uses the project's standard types defined in Std_Types.h.
  *
  * Typical usage:
@@ -84,7 +84,7 @@ typedef enum {
 
 /**
  * @brief  Initialise the FDCAN peripheral in Classic CAN mode.
- * @note   Does not configure clocks; assumes SystemClock_Config() already ran.
+ * @note   Does not configure clocks; assumes SystemClock_Cfg() already ran.
  * @return CAN_OK on success, CAN_ERROR on HAL failure,
  *         CAN_ALREADY_INIT if called more than once without DeInit.
  */

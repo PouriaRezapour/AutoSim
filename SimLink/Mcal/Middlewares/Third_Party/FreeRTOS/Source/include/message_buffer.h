@@ -95,7 +95,7 @@ MessageBufferHandle_t xMessageBufferCreate( size_t xBufferSizeBytes );
  * memory (memory that is allocated at compile time).
  *
  * configSUPPORT_DYNAMIC_ALLOCATION must be set to 1 or left undefined in
- * OS_Config.h for xMessageBufferCreate() to be available.
+ * OS_Cfg.h for xMessageBufferCreate() to be available.
  *
  * @param xBufferSizeBytes The total number of bytes (not messages) the message
  * buffer will be able to hold at any one time.  When a message is written to
@@ -263,7 +263,7 @@ size_t xMessageBufferSend( MessageBufferHandle_t xMessageBuffer,
  * pdMS_TO_TICKS() can be used to convert a time specified in milliseconds into
  * a time specified in ticks.  Setting xTicksToWait to portMAX_DELAY will cause
  * the task to wait indefinitely (without timing out), provided
- * INCLUDE_vTaskSuspend is set to 1 in OS_Config.h.  Tasks do not use any
+ * INCLUDE_vTaskSuspend is set to 1 in OS_Cfg.h.  Tasks do not use any
  * CPU time when they are in the Blocked state.
  *
  * @return The number of bytes written to the message buffer.  If the call to
@@ -461,7 +461,7 @@ size_t xMessageBufferReceive( MessageBufferHandle_t xMessageBuffer,
  * macro pdMS_TO_TICKS() can be used to convert a time specified in milliseconds
  * into a time specified in ticks.  Setting xTicksToWait to portMAX_DELAY will
  * cause the task to wait indefinitely (without timing out), provided
- * INCLUDE_vTaskSuspend is set to 1 in OS_Config.h.  Tasks do not use any
+ * INCLUDE_vTaskSuspend is set to 1 in OS_Cfg.h.  Tasks do not use any
  * CPU time when they are in the Blocked state.
  *
  * @return The length, in bytes, of the message read from the message buffer, if

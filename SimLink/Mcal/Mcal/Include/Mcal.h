@@ -1,6 +1,6 @@
 /**
  * @file    Mcal.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-04
  * @version 0.1.2
  * @brief   Microcontroller Abstraction Layer (MCAL) header.

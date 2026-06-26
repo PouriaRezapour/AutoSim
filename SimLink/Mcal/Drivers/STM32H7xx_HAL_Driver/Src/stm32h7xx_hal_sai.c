@@ -66,7 +66,7 @@
         (+@) PLLSAI4ACLK output is configured or
         (+@) PLLSAI4BCLK output is configured or
         (+@) External clock source is configured after setting correctly
-             the define constant EXTERNAL_CLOCK_VALUE in the Mcal_Config.h file.
+             the define constant EXTERNAL_CLOCK_VALUE in the Mcal_Cfg.h file.
 
   [..]
     (@) In master Tx mode: enabling the audio block immediately generates the bit clock

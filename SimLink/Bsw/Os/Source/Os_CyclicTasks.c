@@ -1,6 +1,6 @@
 /**
  * @file    Os_CyclicTasks.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Cyclic RTOS task implementations.
@@ -10,7 +10,7 @@
  * 20 ms, 50 ms, 100 ms, background, and Ethernet). Each task uses
  * osDelayUntil for drift-free periodic execution and delegates to the
  * corresponding RTE scheduler function. Tasks are conditionally compiled
- * based on OS_TASK_xxx_ENABLED flags defined in Os_TasksConfig.h.
+ * based on OS_TASK_xxx_ENABLED flags defined in Os_TasksCfg.h.
  *
  * @par Revision History:
  * |---------|------------|------------------|------------------------------------------|
@@ -28,7 +28,7 @@
 /* ─── Includes ────────────────────────────────────────────────────────────── */
 
 #include "Os_CyclicTasks.h"
-#include "Os_TasksConfig.h"
+#include "Os_TasksCfg.h"
 #include "Std_Types.h"
 #include "cmsis_os.h"
 #include "Rte_Scheduler.h"

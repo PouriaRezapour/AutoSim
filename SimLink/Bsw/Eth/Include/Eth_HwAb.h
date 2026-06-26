@@ -1,6 +1,6 @@
 /**
  * @file    Eth_HwAb.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Ethernet hardware abstraction layer.

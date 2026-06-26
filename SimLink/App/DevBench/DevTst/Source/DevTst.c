@@ -1,8 +1,8 @@
 /**
  * @file    DevTst.c
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-07
- * @version 0.2.3
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-08
+ * @version 0.2.6
  * @brief   Development test framework — top-level implementation.
  *
  * @details
@@ -19,11 +19,13 @@
  * | 0.2.3   | 2025-06-07 | A.Rezapour       | The module now uses the project's    |
  * |         |            |                  | standard types defined in            |
  * |         |            |                  | Std_Types.h.                         |
+ * | 0.2.6   | 2025-07-08 | A.Rezapour       | Added DevTst_Run_100ms() delegation  |
+ * |         |            |                  | for the DioFlip module.              |
  * |---------|------------|------------------|--------------------------------------|
  */
 
 #include "Std_Types.h"
-#include "DevTst_Config.h"
+#include "DevTst_Cfg.h"
 
 #if DEVTST_ENABLED
 
@@ -42,6 +44,11 @@ void DevTst_Init(void)
 void DevTst_Run_10ms(void)
 {
     DevTstMgr_Run_10ms();
+}
+
+void DevTst_Run_100ms(void)
+{
+    DevTstMgr_Run_100ms();
 }
 
 #endif /* DEVTST_ENABLED */

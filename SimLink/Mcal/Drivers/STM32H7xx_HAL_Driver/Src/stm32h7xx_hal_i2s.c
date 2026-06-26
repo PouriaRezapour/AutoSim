@@ -54,7 +54,7 @@
        __HAL_I2S_ENABLE_IT() and __HAL_I2S_DISABLE_IT() inside the transmit and receive process.
 
         (+@) External clock source is configured after setting correctly
-             the define constant EXTERNAL_CLOCK_VALUE in the Mcal_Config.h file.
+             the define constant EXTERNAL_CLOCK_VALUE in the Mcal_Cfg.h file.
 
     (#) Three mode of operations are available within this driver :
 

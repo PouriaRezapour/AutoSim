@@ -1,6 +1,6 @@
 /**
  * @file    Eth_HwAb.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Ethernet Hardware Abstraction Layer implementation.
@@ -28,7 +28,7 @@
 
 #include "Std_Types.h"
 #include "Eth_HwAb.h"
-#include "Eth_Config.h"
+#include "Eth_Cfg.h"
 
 /* ─── Private Variables ───────────────────────────────────────────────────── */
 

@@ -1,6 +1,6 @@
 /**
  * @file    Can_HwAb.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Implementation of the CAN Hardware Abstraction layer.

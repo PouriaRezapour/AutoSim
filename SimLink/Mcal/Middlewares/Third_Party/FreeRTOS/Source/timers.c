@@ -52,14 +52,14 @@ correct privileged Vs unprivileged linkage and placement. */
 /* This entire source file will be skipped if the application is not configured
 to include software timer functionality.  This #if is closed at the very bottom
 of this file.  If you want to include software timer functionality then ensure
-configUSE_TIMERS is set to 1 in OS_Config.h. */
+configUSE_TIMERS is set to 1 in OS_Cfg.h. */
 #if ( configUSE_TIMERS == 1 )
 
 /* Misc definitions. */
 #define tmrNO_DELAY		( TickType_t ) 0U
 
 /* The name assigned to the timer service task.  This can be overridden by
-defining trmTIMER_SERVICE_TASK_NAME in OS_Config.h. */
+defining trmTIMER_SERVICE_TASK_NAME in OS_Cfg.h. */
 #ifndef configTIMER_SERVICE_TASK_NAME
 	#define configTIMER_SERVICE_TASK_NAME "Tmr Svc"
 #endif
@@ -1120,7 +1120,7 @@ Timer_t * const pxTimer = xTimer;
 
 /* This entire source file will be skipped if the application is not configured
 to include software timer functionality.  If you want to include software timer
-functionality then ensure configUSE_TIMERS is set to 1 in OS_Config.h. */
+functionality then ensure configUSE_TIMERS is set to 1 in OS_Cfg.h. */
 #endif /* configUSE_TIMERS == 1 */
 
 

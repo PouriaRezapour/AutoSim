@@ -1,8 +1,8 @@
 /**
  * @file    Rte_PcComMgr.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-17
- * @version 1.0.0
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-06-23
+ * @version 0.2.4
  * @brief   AUTOSAR RTE Interface Header for SWC: PcComMgr
  *
  * @details
@@ -39,7 +39,7 @@
  * |---------|------------|------------------|--------------------------------------|
  * | Version | Date       | Author           | Description                          |
  * |---------|------------|------------------|--------------------------------------|
- * | 1.0.0   | 2025-06-17 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial consolidated release         |
  * |---------|------------|------------------|--------------------------------------|
  */
 

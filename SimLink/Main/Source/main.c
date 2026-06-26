@@ -1,6 +1,6 @@
 /**
  * @file    main.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-18
  * @version 0.1.2
  * @brief   Application entry point.

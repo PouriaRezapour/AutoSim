@@ -1,8 +1,8 @@
 /**
  * @file    Rte_DevTst.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-07
- * @version 0.2.3
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-08
+ * @version 0.2.6
  * @brief   RTE-OS interface for DevTst domain initialization and runnables.
  *
  * @details
@@ -22,6 +22,8 @@
  * | 0.2.1   | 2025-05-26 | A.Rezapour       | Initial release                      |
  * | 0.2.3   | 2025-06-07 | A.Rezapour       | Integrate Std_Types.h; add Module    |
  * |         |            |                  | Info and Version Info sections       |
+ * | 0.2.6   | 2025-07-08 | A.Rezapour       | Added Rte_Runnable_DevTst_100ms()    |
+ * |         |            |                  | for the DioFlip module.              |
  * |---------|------------|------------------|--------------------------------------|
  */
 
@@ -49,7 +51,7 @@
 #define RTE_DEVTSTOSIF_SW_MINOR_VERSION     0x02u
 
 /** Software patch version number */
-#define RTE_DEVTSTOSIF_SW_PATCH_VERSION     0x03u
+#define RTE_DEVTSTOSIF_SW_PATCH_VERSION     0x04u
 
 /* ─── Macros & Constants ──────────────────────────────────────────────────── */
 
@@ -79,6 +81,14 @@ void Rte_DevTst_Init(void);
  *         When DEVTST_ENABLED is not defined this function is a no-op.
  */
 void Rte_Runnable_DevTst_10ms(void);
+
+/**
+ * @brief  100 ms cyclic runnable for the DevTst framework.
+ * @note   Wraps DevTst_Run_100ms() and must be invoked by the scheduler
+ *         every 100 milliseconds.
+ *         When DEVTST_ENABLED is not defined this function is a no-op.
+ */
+void Rte_Runnable_DevTst_100ms(void);
 
 #ifdef __cplusplus
 }

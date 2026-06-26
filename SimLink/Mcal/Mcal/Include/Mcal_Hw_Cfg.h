@@ -1,6 +1,6 @@
 /**
  * @file    Mcal_Hw_Config.h
- * @author  Ali Rezapour
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   STM32H7xx Nucleo board configuration file.
@@ -14,7 +14,7 @@
  * |---------|------------|---------------|--------------------------------------|
  * | Version | Date       | Author        | Description                          |
  * |---------|------------|---------------|--------------------------------------|
- * | 0.2.3   | 2025-06-07 | Ali Rezapour  | Reformatted to project template style|
+ * | 0.2.3   | 2025-06-07 | A.Rezapour    | Reformatted to project template style|
  * |---------|------------|---------------|--------------------------------------|
  */
 

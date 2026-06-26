@@ -1,6 +1,6 @@
 /**
  * @file    Os_CyclicTasks.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Cyclic task function declarations.
@@ -8,7 +8,7 @@
  * @details
  * This header declares the individual task thread functions that are
  * executed periodically by the RTOS scheduler. Each task function is
- * conditionally declared based on Os_TasksConfig.h configuration.
+ * conditionally declared based on Os_TasksCfg.h configuration.
  *
  * Available cyclic tasks:
  * - Ethernet task (Os_Task_Eth)
@@ -21,7 +21,7 @@
  * - Background idle task (Os_Task_Background)
  *
  * Each task handle and function prototype is conditionally compiled based
- * on the corresponding OS_TASK_*_ENABLED flag in Os_TasksConfig.h.
+ * on the corresponding OS_TASK_*_ENABLED flag in Os_TasksCfg.h.
  *
  * @par Revision History:
  * |---------|------------|------------------|--------------------------------------|
@@ -44,7 +44,7 @@ extern "C" {
 
 /* ─── Includes ────────────────────────────────────────────────────────────── */
 
-#include "Os_TasksConfig.h"
+#include "Os_TasksCfg.h"
 #include "Std_Types.h"
 #include "cmsis_os.h"
 

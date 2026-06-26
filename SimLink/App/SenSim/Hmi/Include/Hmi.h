@@ -1,8 +1,8 @@
 /**
  * @file    Hmi.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-17
- * @version 1.0.0
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-01
+ * @version 0.2.5
  * @brief   AUTOSAR SWC Interface Header: Hmi
  *
  * @details
@@ -14,10 +14,14 @@
  *   - Writing the accumulated value to the PpBtnValue provide port via Rte_Hmi
  *
  * Require Ports:
- *   RpDio      — UsrBtn    (boolean)  Raw button state from DIO hardware
+ *   RpDio      — UsrBtn    (boolean)  Raw button state from DIO hardware,
+ *                                     obtained via Rte_Call (BSW-bound pin
+ *                                     access, not SWC-to-SWC communication)
  *
  * Provide Ports:
- *   PpBtnValue — BtnValue  (float)    Accumulated value for PcComMgr
+ *   PpBtnValue — BtnValue  (float)    Accumulated value for PcComMgr,
+ *                                     written via Rte_Write (genuine
+ *                                     SWC-to-SWC communication)
  *
  * Design note — accumulated value ownership
  * ──────────────────────────────────────────
@@ -31,7 +35,10 @@
  * |---------|------------|------------------|--------------------------------------|
  * | Version | Date       | Author           | Description                          |
  * |---------|------------|------------------|--------------------------------------|
- * | 1.0.0   | 2025-06-17 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.5   | 2025-07-01 | A.Rezapour       | RpDio.UsrBtn is BSW-bound; switched  |
+ * |         |            |                  | from Rte_Read_RpDio_UsrBtn to        |
+ * |         |            |                  | Rte_Call_RpDio_UsrBtn.               |
  * |---------|------------|------------------|--------------------------------------|
  */
 

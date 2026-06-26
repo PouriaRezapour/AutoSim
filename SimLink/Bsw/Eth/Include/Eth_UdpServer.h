@@ -1,6 +1,6 @@
 /**
  * @file    Eth_UdpServer.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   UDP server module for Ethernet communication.

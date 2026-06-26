@@ -1,6 +1,6 @@
 /**
  * @file    SimLink.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-04
  * @version 0.1.2
  * @brief   Main application interface for SimLink HIL platform.

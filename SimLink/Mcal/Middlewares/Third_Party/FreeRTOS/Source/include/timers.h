@@ -1132,7 +1132,7 @@ TaskHandle_t xTimerGetTimerDaemonTaskHandle( void ) PRIVILEGED_FUNCTION;
  * @param pxHigherPriorityTaskWoken As mentioned above, calling this function
  * will result in a message being sent to the timer daemon task.  If the
  * priority of the timer daemon task (which is set using
- * configTIMER_TASK_PRIORITY in OS_Config.h) is higher than the priority of
+ * configTIMER_TASK_PRIORITY in OS_Cfg.h) is higher than the priority of
  * the currently running task (the task the interrupt interrupted) then
  * *pxHigherPriorityTaskWoken will be set to pdTRUE within
  * xTimerPendFunctionCallFromISR(), indicating that a context switch should be

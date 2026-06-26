@@ -105,18 +105,18 @@ static osKernelState_t KernelState = osKernelInactive;
 /*
   Heap region definition used by heap_5 variant
 
-  Define configAPPLICATION_ALLOCATED_HEAP as nonzero value in OS_Config.h if
+  Define configAPPLICATION_ALLOCATED_HEAP as nonzero value in OS_Cfg.h if
   heap regions are already defined and vPortDefineHeapRegions is called in application.
 
   Otherwise vPortDefineHeapRegions will be called by osKernelInitialize using
   definition configHEAP_5_REGIONS as parameter. Overriding configHEAP_5_REGIONS
-  is possible by defining it globally or in OS_Config.h.
+  is possible by defining it globally or in OS_Cfg.h.
 */
 #if defined(USE_FreeRTOS_HEAP_5)
 #if (configAPPLICATION_ALLOCATED_HEAP == 0)
   /*
     FreeRTOS heap is not defined by the application.
-    Single region of size configTOTAL_HEAP_SIZE (defined in OS_Config.h)
+    Single region of size configTOTAL_HEAP_SIZE (defined in OS_Cfg.h)
     is provided by default. Define configHEAP_5_REGIONS to provide custom
     HeapRegion_t array.
   */

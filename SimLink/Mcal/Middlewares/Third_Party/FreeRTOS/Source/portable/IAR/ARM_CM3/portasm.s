@@ -25,7 +25,7 @@
  * 1 tab == 4 spaces!
  */
 
-#include <OS_Config.h>
+#include <OS_Cfg.h>
 
 	RSEG    CODE:CODE(2)
 	thumb

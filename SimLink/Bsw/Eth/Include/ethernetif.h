@@ -1,6 +1,6 @@
 /**
  * @file    ethernetif.h
- * @author  Ali Rezapour
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Header for ethernetif.c module.
@@ -15,7 +15,7 @@
  * |---------|------------|---------------|--------------------------------------|
  * | Version | Date       | Author        | Description                          |
  * |---------|------------|---------------|--------------------------------------|
- * | 0.2.3   | 2025-06-07 | Ali Rezapour  | Reformatted to project template style|
+ * | 0.2.3   | 2025-06-07 | A.Rezapour    | Reformatted to project template style|
  * |---------|------------|---------------|--------------------------------------|
  */
 

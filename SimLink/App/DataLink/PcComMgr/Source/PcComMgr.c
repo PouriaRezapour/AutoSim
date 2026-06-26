@@ -1,8 +1,8 @@
 /**
  * @file    PcComMgr.c
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-17
- * @version 1.0.0
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-06-23
+ * @version 0.2.4
  * @brief   AUTOSAR SWC Implementation: PcComMgr
  *
  * @details
@@ -19,7 +19,7 @@
  * Port naming: no underscore after Pp/Rp prefix (RpBtnValue, RpEth, PpEth).
  *
  * Permitted includes: PcComMgr.h, Rte_PcComMgr.h
- * Forbidden:          Eth_UdpServer.h, Eth_Config.h, Eth_HwAb.h, Mcal.h,
+ * Forbidden:          Eth_UdpServer.h, Eth_Cfg.h, Eth_HwAb.h, Mcal.h,
  *                     Rte_HmiPcComIf.h, Rte_PcComEthIf.h, Rte_HmiDioIf.h,
  *                     Rte_Hmi.h
  *
@@ -27,7 +27,7 @@
  * |---------|------------|------------------|--------------------------------------|
  * | Version | Date       | Author           | Description                          |
  * |---------|------------|------------------|--------------------------------------|
- * | 1.0.0   | 2025-06-17 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial consolidated release         |
  * |---------|------------|------------------|--------------------------------------|
  */
 

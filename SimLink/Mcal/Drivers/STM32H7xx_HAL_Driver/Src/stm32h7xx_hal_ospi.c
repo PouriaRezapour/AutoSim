@@ -313,7 +313,7 @@ static void              OSPI_DMAAbortCplt(MDMA_HandleTypeDef *hmdma);
 static HAL_StatusTypeDef OSPI_WaitFlagStateUntilTimeout(OSPI_HandleTypeDef *hospi, uint32_t Flag, FlagStatus State,
                                                         uint32_t Tickstart, uint32_t Timeout);
 static HAL_StatusTypeDef OSPI_ConfigCmd(OSPI_HandleTypeDef *hospi, OSPI_RegularCmdTypeDef *cmd);
-static HAL_StatusTypeDef OSPIM_GetConfig(uint8_t instance_nb, OSPIM_CfgTypeDef *cfg);
+static HAL_StatusTypeDef OSPIM_GetConfig(uint8_t instance_nb, OSPIM_ConfigTypeDef *cfg);
 static void OSPI_DMAAbortOnError(MDMA_HandleTypeDef *hmdma);
 /**
   @endcond
@@ -2481,14 +2481,14 @@ uint32_t HAL_OSPI_GetState(const OSPI_HandleTypeDef *hospi)
   * @param  Timeout : Timeout duration
   * @retval HAL status
   */
-HAL_StatusTypeDef HAL_OSPIM_Config(OSPI_HandleTypeDef *hospi, OSPIM_CfgTypeDef *cfg, uint32_t Timeout)
+HAL_StatusTypeDef HAL_OSPIM_Config(OSPI_HandleTypeDef *hospi, OSPIM_ConfigTypeDef *cfg, uint32_t Timeout)
 {
   HAL_StatusTypeDef status = HAL_OK;
   uint32_t instance;
   uint8_t index;
   uint8_t ospi_enabled = 0U;
   uint8_t other_instance;
-  OSPIM_CfgTypeDef IOM_cfg[OSPI_NB_INSTANCE];
+  OSPIM_ConfigTypeDef IOM_cfg[OSPI_NB_INSTANCE];
 
   /* Prevent unused argument(s) compilation warning */
   UNUSED(Timeout);
@@ -3092,7 +3092,7 @@ static HAL_StatusTypeDef OSPI_ConfigCmd(OSPI_HandleTypeDef *hospi, OSPI_RegularC
   * @param  cfg         : configuration of the IO Manager for the instance
   * @retval HAL status
   */
-static HAL_StatusTypeDef OSPIM_GetConfig(uint8_t instance_nb, OSPIM_CfgTypeDef *cfg)
+static HAL_StatusTypeDef OSPIM_GetConfig(uint8_t instance_nb, OSPIM_ConfigTypeDef *cfg)
 {
   HAL_StatusTypeDef status = HAL_OK;
   uint32_t reg;

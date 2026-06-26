@@ -1,6 +1,6 @@
 /**
  * @file    Eth_NetInit.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Ethernet network interface initialisation (lwIP).
@@ -26,7 +26,7 @@
 
 #include "Std_Types.h"
 #include "ETH_NetInit.h"
-#include "Eth_Config.h"
+#include "Eth_Cfg.h"
 #include "cmsis_os.h"
 #include "ethernetif.h"
 #include "Eth_Status.h"

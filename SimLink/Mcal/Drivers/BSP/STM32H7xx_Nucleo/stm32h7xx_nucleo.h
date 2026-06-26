@@ -27,7 +27,7 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "Mcal_Hw_Config.h"
+#include "Mcal_Hw_Cfg.h"
 #include "stm32h7xx_nucleo_errno.h"
 
 #if (USE_BSP_COM_FEATURE > 0)
@@ -58,13 +58,13 @@
 #endif
 
 #if !defined (USE_NUCLEO_144)
- #error "Board Pin number not defined!! Add USE_NUCLEO_144 define within Mcal_Hw_Config file"
+ #error "Board Pin number not defined!! Add USE_NUCLEO_144 define within Mcal_Hw_Cfg file"
 #endif
 
 #if !defined (USE_NUCLEO_H745ZI_Q) && !defined (USE_NUCLEO_H755ZI_Q) && !defined (USE_NUCLEO_H743ZI) &&\
      !defined (USE_NUCLEO_H753ZI) && !defined (USE_NUCLEO_H743ZI2) && !defined (USE_NUCLEO_H7A3ZI_Q) &&\
      !defined (USE_NUCLEO_H723ZG)
- #error "Board Part number not defined!! Add one of the following defines within Mcal_Hw_Config file:\
+ #error "Board Part number not defined!! Add one of the following defines within Mcal_Hw_Cfg file:\
          USE_NUCLEO_H745ZI_Q, USE_NUCLEO_H755ZI_Q, USE_NUCLEO_H743ZI, USE_NUCLEO_H753ZI, USE_NUCLEO_H743ZI2,\
          USE_NUCLEO_H7A3ZI_Q or USE_NUCLEO_H723ZG"
 #endif

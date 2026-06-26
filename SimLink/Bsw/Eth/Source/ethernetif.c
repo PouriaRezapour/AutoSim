@@ -17,7 +17,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "ethernetif.h"
-#include "Eth_Config.h"
+#include "Eth_Cfg.h"
 
 #include "Mcal.h"
 

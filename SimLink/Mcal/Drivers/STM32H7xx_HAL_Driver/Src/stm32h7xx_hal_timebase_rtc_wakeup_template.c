@@ -31,7 +31,7 @@
     This file must be copied to the application folder and modified as follows:
     (#) Rename it to 'stm32h7xx_hal_timebase_rtc_wakeup.c'
     (#) Add this file and the RTC HAL drivers to your project and uncomment
-       HAL_RTC_MODULE_ENABLED define in Mcal_Config.h
+       HAL_RTC_MODULE_ENABLED define in Mcal_Cfg.h
 
     [..]
     (@) HAL RTC alarm and HAL RTC wakeup drivers can not be used with low power modes:

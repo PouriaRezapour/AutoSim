@@ -1,6 +1,6 @@
 /**
  * @file    Rte_Eth.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   RTE OS Interface for the Ethernet domain.

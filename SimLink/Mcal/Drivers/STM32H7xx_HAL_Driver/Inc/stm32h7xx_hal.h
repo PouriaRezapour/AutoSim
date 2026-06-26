@@ -26,7 +26,7 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "Mcal_Config.h"
+#include "Mcal_Cfg.h"
 
 /** @addtogroup STM32H7xx_HAL_Driver
   * @{

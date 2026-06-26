@@ -1,6 +1,6 @@
 /**
  * @file    SimLink.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-18
  * @version 0.2.0
  * @brief   SimLink application layer implementation.
@@ -28,7 +28,7 @@
 
 #include "Mcu.h"
 #include "Port.h"
-#include "Dio_HwAb.h"
+#include "DioIf.h"
 #include "Can.h"
 #include "Os.h"
 
@@ -42,11 +42,11 @@ void SimLink_Init(void)
     HAL_Init();
 
     /* __Bsw__ */
-    Mpu_Init();        /* Clocks, MPU, cache, BSP LEDs             */
-    Port_Init();       /* GPIO pin-mux for all peripherals         */
-    Dio_HwAb_Init();   /* Digital I/O hardware abstraction         */
-    Can_Init();        /* FDCAN1 peripheral configuration          */
-    Can_Start();       /* Apply Rx filters and start the bus       */
+    Mpu_Init();                      /* Clocks, MPU, cache, BSP LEDs             */
+    Port_Init(&PortConfigSet);       /* GPIO pin-mux for all peripherals         */
+    DioIf_Init();                    /* Digital I/O hardware abstraction         */
+    Can_Init();                      /* FDCAN1 peripheral configuration          */
+    Can_Start();                     /* Apply Rx filters and start the bus       */
 
     /* __App__ */
     PcComMgr_Init();

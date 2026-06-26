@@ -1,15 +1,15 @@
 /**
  * @file    Rte_PcComMgr.c
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-17
- * @version 1.0.0
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-06-23
+ * @version 0.2.4
  * @brief   AUTOSAR RTE Implementation for SWC: PcComMgr
  *
  * @details
  * Single consolidated RTE implementation for the PcComMgr software component.
  *
  * This is the only file outside the Ethernet layer permitted to include
- * Eth_HwAb.h, Eth_UdpServer.h, Eth_Config.h, and Mcal.h.
+ * Eth_HwAb.h, Eth_UdpServer.h, Eth_Cfg.h, and Mcal.h.
  *
  * Cross-SWC signal access
  * ────────────────────────
@@ -29,7 +29,7 @@
  * |---------|------------|------------------|--------------------------------------|
  * | Version | Date       | Author           | Description                          |
  * |---------|------------|------------------|--------------------------------------|
- * | 1.0.0   | 2025-06-17 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial consolidated release         |
  * |---------|------------|------------------|--------------------------------------|
  */
 
@@ -40,7 +40,7 @@
 #include "Rte_Buffers.h"
 #include "Eth_HwAb.h"
 #include "Eth_UdpServer.h"
-#include "Eth_Config.h"
+#include "Eth_Cfg.h"
 #include "Mcal.h"
 
 /* ─── Private Variables (TX signal storage) ──────────────────────────────── */

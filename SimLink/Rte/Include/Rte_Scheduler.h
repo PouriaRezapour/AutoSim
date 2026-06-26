@@ -1,6 +1,6 @@
 /**
  * @file    Rte_Scheduler.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   RTE scheduler interface for periodic and background task execution.

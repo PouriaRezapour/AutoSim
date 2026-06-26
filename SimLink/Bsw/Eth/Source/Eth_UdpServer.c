@@ -1,6 +1,6 @@
 /**
  * @file    Eth_UdpServer.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   UDP server implementation using the lwIP Netconn API.
@@ -30,7 +30,7 @@
 
 #include "Std_Types.h"
 #include "Eth_UdpServer.h"
-#include "Eth_Config.h"
+#include "Eth_Cfg.h"
 #include "Eth_HwAb.h"
 
 /* ─── Private Variables ───────────────────────────────────────────────────── */

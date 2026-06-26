@@ -111,7 +111,7 @@ typedef TickType_t EventBits_t;
  *
  * Although event groups are not related to ticks, for internal implementation
  * reasons the number of bits available for use in an event group is dependent
- * on the configUSE_16_BIT_TICKS setting in OS_Config.h.  If
+ * on the configUSE_16_BIT_TICKS setting in OS_Cfg.h.  If
  * configUSE_16_BIT_TICKS is 1 then each event group contains 8 usable bits (bit
  * 0 to bit 7).  If configUSE_16_BIT_TICKS is set to 0 then each event group has
  * 24 usable bits (bit 0 to bit 23).  The EventBits_t type is used to store
@@ -167,7 +167,7 @@ typedef TickType_t EventBits_t;
  *
  * Although event groups are not related to ticks, for internal implementation
  * reasons the number of bits available for use in an event group is dependent
- * on the configUSE_16_BIT_TICKS setting in OS_Config.h.  If
+ * on the configUSE_16_BIT_TICKS setting in OS_Cfg.h.  If
  * configUSE_16_BIT_TICKS is 1 then each event group contains 8 usable bits (bit
  * 0 to bit 7).  If configUSE_16_BIT_TICKS is set to 0 then each event group has
  * 24 usable bits (bit 0 to bit 23).  The EventBits_t type is used to store

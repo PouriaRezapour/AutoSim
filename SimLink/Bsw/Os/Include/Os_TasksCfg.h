@@ -1,6 +1,6 @@
 /**
- * @file    Os_TasksConfig.h
- * @author  A.Rezapour (Pouria)
+ * @file    Os_TasksCfg.h
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   RTOS task configuration header.

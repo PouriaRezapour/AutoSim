@@ -1,7 +1,6 @@
-
 /**
  * @file    OS_Config.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-18
  * @version 0.1.2
  * @brief   FreeRTOS kernel configuration for the target Cortex-M platform.

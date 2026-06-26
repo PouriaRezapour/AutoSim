@@ -1,6 +1,6 @@
 /**
  * @file    Can_HwAb.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   CAN Hardware Abstraction layer – Tx/Rx descriptors, data buffers,

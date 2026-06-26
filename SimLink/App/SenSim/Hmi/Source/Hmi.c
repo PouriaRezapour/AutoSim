@@ -1,8 +1,8 @@
 /**
  * @file    Hmi.c
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-17
- * @version 1.0.0
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-01
+ * @version 0.2.5
  * @brief   AUTOSAR SWC Implementation: Hmi
  *
  * @details
@@ -15,6 +15,11 @@
  *
  * Port naming: no underscore after Pp/Rp prefix (RpDio, PpBtnValue).
  *
+ * RpDio.UsrBtn is a BSW-bound (Dio pin) access rather than SWC-to-SWC
+ * communication, so it is obtained via Rte_Call_RpDio_UsrBtn(), not
+ * Rte_Read_RpDio_UsrBtn(). PpBtnValue.BtnValue is genuine SWC-to-SWC
+ * communication and continues to use Rte_Write.
+ *
  * Accumulated value ownership
  * ────────────────────────────
  *   The running total is kept in the static Hmi_Outputs.BtnValue field and
@@ -23,13 +28,16 @@
  *   on a detected rising edge.
  *
  * Permitted includes: Hmi.h, Rte_Hmi.h
- * Forbidden:          Dio_HwAb.h, Eth_*.h, Mcal.h, HAL_*.h
+ * Forbidden:          DioIf.h, Eth_*.h, Mcal.h, HAL_*.h
  *
  * @par Revision History:
  * |---------|------------|------------------|--------------------------------------|
  * | Version | Date       | Author           | Description                          |
  * |---------|------------|------------------|--------------------------------------|
- * | 1.0.0   | 2025-06-17 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.5   | 2025-07-01 | A.Rezapour       | RpDio.UsrBtn is BSW-bound; switched  |
+ * |         |            |                  | from Rte_Read_RpDio_UsrBtn to        |
+ * |         |            |                  | Rte_Call_RpDio_UsrBtn.               |
  * |---------|------------|------------------|--------------------------------------|
  */
 
@@ -67,14 +75,15 @@ static float   Hmi_CalcBtnValue(const Hmi_InputData_t *inputs);
  * @brief  Read all require-port signals into the local input buffer.
  * @details
  * A read error increments the diagnostic counter and falls back to the
- * safe default (button not pressed).
+ * safe default (button not pressed). RpDio.UsrBtn is BSW-bound (Dio pin
+ * access via DioIf), so it is obtained via Rte_Call, not Rte_Read.
  */
 static void Hmi_ReadInputs(void)
 {
     Std_ReturnType ret;
 
     /* --- RpDio ------------------------------------------------------------ */
-    ret = Rte_Read_RpDio_UsrBtn(&Hmi_Inputs.UsrBtn);
+    ret = Rte_Call_RpDio_UsrBtn(&Hmi_Inputs.UsrBtn);
     if (ret != RTE_E_OK)
     {
         Hmi_Inputs.UsrBtn = FALSE;
@@ -147,7 +156,7 @@ void Hmi_Init(void)
     Hmi_DiagEventCnt = 0u;
 
     /* Read initial button state to seed the edge-detector */
-    (void)Rte_Read_RpDio_UsrBtn(&s_lastStableState);
+    (void)Rte_Call_RpDio_UsrBtn(&s_lastStableState);
 
     /* Write safe default output */
     Hmi_Outputs.BtnValue = 0.0f;

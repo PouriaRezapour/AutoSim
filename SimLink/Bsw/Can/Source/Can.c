@@ -1,6 +1,6 @@
 /**
  * @file    Can.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Implementation of the CAN driver module.
@@ -70,7 +70,7 @@ static CanState_t          s_canState = { .isInitialised = 0, .isStarted = 0 };
 /* ─── Private Function Prototypes ────────────────────────────────────────── */
 
 static CanStatus_t    Can_InitPeriphClk_(void);
-static CanStatus_t    Can_ConfigNvic_(void);
+static CanStatus_t    Can_CfgNvic_(void);
 
 /* ─── Public Functions ────────────────────────────────────────────────────── */
 
@@ -85,7 +85,7 @@ CanStatus_t Can_Init(void)
         return CAN_ALREADY_INIT;
     }
 
-    /* Enable FDCAN kernel clock (sourced from PLL – see SystemClock_Config) */
+    /* Enable FDCAN kernel clock (sourced from PLL – see SystemClock_Cfg) */
     if (Can_InitPeriphClk_() != CAN_OK)
     {
         return CAN_ERROR;
@@ -148,7 +148,7 @@ CanStatus_t Can_Init(void)
     }
 
     /* Configure NVIC for FDCAN1 interrupt line 0 */
-    if (Can_ConfigNvic_() != CAN_OK)
+    if (Can_CfgNvic_() != CAN_OK)
     {
         return CAN_ERROR;
     }
@@ -340,7 +340,7 @@ static CanStatus_t Can_InitPeriphClk_(void)
 /**
  * @brief  Set FDCAN1 interrupt priority and enable it in the NVIC.
  */
-static CanStatus_t Can_ConfigNvic_(void)
+static CanStatus_t Can_CfgNvic_(void)
 {
     HAL_NVIC_SetPriority(FDCAN1_IT0_IRQn, 0U, 0U);
     HAL_NVIC_EnableIRQ(FDCAN1_IT0_IRQn);

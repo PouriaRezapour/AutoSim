@@ -1362,13 +1362,13 @@ void HAL_RCC_DisableCSS(void)
   * @note     If SYSCLK source is HSE, function returns values based on HSE_VALUE(***)
   * @note     If SYSCLK source is PLL, function returns values based on CSI_VALUE(*),
   *           HSI_VALUE(**) or HSE_VALUE(***) multiplied/divided by the PLL factors.
-  * @note     (*) CSI_VALUE is a constant defined in Mcal_Config.h file (default value
+  * @note     (*) CSI_VALUE is a constant defined in Mcal_Cfg.h file (default value
   *               4 MHz) but the real value may vary depending on the variations
   *               in voltage and temperature.
-  * @note     (**) HSI_VALUE is a constant defined in Mcal_Config.h file (default value
+  * @note     (**) HSI_VALUE is a constant defined in Mcal_Cfg.h file (default value
   *               64 MHz) but the real value may vary depending on the variations
   *               in voltage and temperature.
-  * @note     (***) HSE_VALUE is a constant defined in Mcal_Config.h file (default value
+  * @note     (***) HSE_VALUE is a constant defined in Mcal_Cfg.h file (default value
   *                25 MHz), user has to ensure that HSE_VALUE is same as the real
   *                frequency of the crystal used. Otherwise, this function may
   *                have wrong result.

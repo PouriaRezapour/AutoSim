@@ -1,7 +1,7 @@
 /**
  * @file    MsgTbl_Ikco.c
- * @author  Ali Rezapour
- * @date    2025-06-13
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-06-23
  * @version 0.2.4
  * @brief   Implementation of IKCO-2024 project-specific CAN frame operations.
  *
@@ -33,7 +33,7 @@
  * |---------|------------|--------------|--------------------------------------|
  * | Version | Date       | Author       | Description                          |
  * |---------|------------|--------------|--------------------------------------|
- * | 0.2.4   | 2025-06-13 | Ali Rezapour | Initial release                      |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour   | Initial release                      |
  * |---------|------------|--------------|--------------------------------------|
  */
 

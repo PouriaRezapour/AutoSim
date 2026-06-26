@@ -82,7 +82,7 @@ typedef enum
 
 #if defined (USB_OTG_FS) || defined (USB_OTG_HS)
 typedef USB_OTG_GlobalTypeDef  PCD_TypeDef;
-typedef USB_OTG_CfgTypeDef     PCD_InitTypeDef;
+typedef USB_OTG_ConfigTypeDef     PCD_InitTypeDef;
 typedef USB_OTG_EPTypeDef      PCD_EPTypeDef;
 #endif /* defined (USB_OTG_FS) || defined (USB_OTG_HS) */
 

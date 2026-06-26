@@ -1,6 +1,6 @@
 /**
  * @file    Eth_Status.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Ethernet link status and DHCP state machine implementation.
@@ -38,7 +38,7 @@
 #include "Eth_Status.h"
 #include "ethernetif.h"
 
-#include "Dio_HwAb.h"
+#include "DioIf.h"
 
 
 /* ─── Private Macros ──────────────────────────────────────────────────────── */
@@ -67,8 +67,8 @@ void Eth_LinkStatusUpdated(struct netif *netif)
         /* Update DHCP state machine */
         DHCP_state = DHCP_START;
 #else
-        Dio_HwAb_Write(HWAB_DIO_LED2,STD_ON);
-        Dio_HwAb_Write(HWAB_DIO_LED3,STD_OFF);
+        DioIf_Write(HWAB_DIO_LED2,STD_ON);
+        DioIf_Write(HWAB_DIO_LED3,STD_OFF);
 #endif /* LWIP_DHCP */
     }
     else
@@ -77,8 +77,8 @@ void Eth_LinkStatusUpdated(struct netif *netif)
         /* Update DHCP state machine */
         DHCP_state = DHCP_LINK_DOWN;
 #else
-        Dio_HwAb_Write(HWAB_DIO_LED2,STD_OFF);
-        Dio_HwAb_Write(HWAB_DIO_LED3,STD_ON);
+        DioIf_Write(HWAB_DIO_LED2,STD_OFF);
+        DioIf_Write(HWAB_DIO_LED3,STD_ON);
 #endif /* LWIP_DHCP */
     }
 }
@@ -107,8 +107,8 @@ void DHCP_Thread(void const *argument)
                 ip_addr_set_zero_ip4(&netif->gw);
                 DHCP_state = DHCP_WAIT_ADDRESS;
 
-                Dio_HwAb_Write(HWAB_DIO_LED2,STD_OFF);
-                Dio_HwAb_Write(HWAB_DIO_LED3,STD_OFF);
+                DioIf_Write(HWAB_DIO_LED2,STD_OFF);
+                DioIf_Write(HWAB_DIO_LED3,STD_OFF);
 
                 netifapi_dhcp_start(netif);
             }
@@ -120,8 +120,8 @@ void DHCP_Thread(void const *argument)
                 {
                     DHCP_state = DHCP_ADDRESS_ASSIGNED;
 
-                    Dio_HwAb_Write(HWAB_DIO_LED2,STD_ON);
-                    Dio_HwAb_Write(HWAB_DIO_LED3,STD_OFF);
+                    DioIf_Write(HWAB_DIO_LED2,STD_ON);
+                    DioIf_Write(HWAB_DIO_LED3,STD_OFF);
                 }
                 else
                 {
@@ -143,8 +143,8 @@ void DHCP_Thread(void const *argument)
                                                 ip_2_ip4(&netMask),
                                                 ip_2_ip4(&gw));
 
-                        Dio_HwAb_Write(HWAB_DIO_LED2,STD_ON);
-                        Dio_HwAb_Write(HWAB_DIO_LED3,STD_OFF);
+                        DioIf_Write(HWAB_DIO_LED2,STD_ON);
+                        DioIf_Write(HWAB_DIO_LED3,STD_OFF);
                     }
                 }
             }
@@ -154,8 +154,8 @@ void DHCP_Thread(void const *argument)
             {
                 DHCP_state = DHCP_OFF;
 
-                Dio_HwAb_Write(HWAB_DIO_LED2,STD_OFF);
-                Dio_HwAb_Write(HWAB_DIO_LED3,STD_ON);
+                DioIf_Write(HWAB_DIO_LED2,STD_OFF);
+                DioIf_Write(HWAB_DIO_LED3,STD_ON);
             }
             break;
 

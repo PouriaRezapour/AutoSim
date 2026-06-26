@@ -32,7 +32,7 @@
 #include <stdint.h>
 
 /* FreeRTOS includes. */
-#include "OS_Config.h"
+#include "OS_Cfg.h"
 
 /**
  * @brief PSP value when no task's context is loaded.

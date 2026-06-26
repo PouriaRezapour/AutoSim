@@ -1,6 +1,6 @@
 /**
  * @file    Mcu_Sys.c
- * @author  Ali Rezapour
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-10
  * @version 0.1.0
  * @brief   CMSIS Cortex-M Device Peripheral Access Layer System Source File.
@@ -23,7 +23,7 @@
  * |---------|------------|------------|--------------------------------------|
  * | Version | Date       | Author     | Description                          |
  * |---------|------------|------------|--------------------------------------|
- * | 0.1.0   | 2025-05-10 | Ali Rezapour | Initial release                    |
+ * | 0.1.0   | 2025-05-10 | A.Rezapour   | Initial release                    |
  * |---------|------------|------------|--------------------------------------|
  */
 

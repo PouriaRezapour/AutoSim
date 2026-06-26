@@ -1,6 +1,6 @@
 /**
  * @file    Std_Types.h
- * @author  Ali Rezapour
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   AUTOSAR Standard Types definitions.
@@ -15,7 +15,7 @@
  * |---------|------------|---------------|--------------------------------------|
  * | Version | Date       | Author        | Description                          |
  * |---------|------------|---------------|--------------------------------------|
- * | 0.2.3   | 2025-06-07 | Ali Rezapour  | Initial release                      |
+ * | 0.2.3   | 2025-06-07 | A.Rezapour    | Initial release                      |
  * |---------|------------|---------------|--------------------------------------|
  */
 

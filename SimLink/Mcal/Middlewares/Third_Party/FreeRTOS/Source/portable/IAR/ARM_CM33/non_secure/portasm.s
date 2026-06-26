@@ -24,12 +24,12 @@
  *
  * 1 tab == 4 spaces!
  */
-/* Including OS_Config.h here will cause build errors if the header file
+/* Including OS_Cfg.h here will cause build errors if the header file
 contains code not understood by the assembler - for example the 'extern' keyword.
 To avoid errors place any such code inside a #ifdef __ICCARM__/#endif block so
 the code is included in C files but excluded by the preprocessor in assembly
 files (__ICCARM__ is defined by the IAR C compiler but not by the IAR assembler. */
-#include "OS_Config.h"
+#include "OS_Cfg.h"
 
 	EXTERN pxCurrentTCB
 	EXTERN xSecureContext

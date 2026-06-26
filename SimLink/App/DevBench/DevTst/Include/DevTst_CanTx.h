@@ -1,6 +1,6 @@
 /**
  * @file    DevTst_CanTx.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Development test module for CAN TX verification.
@@ -17,7 +17,7 @@
  * BSW headers directly. DevTst_* modules may include any layer.
  *
  * Compile-time gate: both DEVTST_ENABLED and DEVTST_CANTX_ENABLED must be
- * set to 1 in DevTst_Config.h for this module to be compiled in.
+ * set to 1 in DevTst_Cfg.h for this module to be compiled in.
  * When either flag is 0 all public functions become no-ops via the macros
  * below and no object code is emitted.
  *
@@ -40,7 +40,7 @@
 /* ─── Includes ────────────────────────────────────────────────────────────── */
 
 #include "Std_Types.h"
-#include "DevTst_Config.h"
+#include "DevTst_Cfg.h"
 #include "Can.h"
 
 /* ─── Module Info ─────────────────────────────────────────────────────────── */

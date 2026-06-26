@@ -1,8 +1,8 @@
 /**
  * @file    Rte_Hmi.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-17
- * @version 1.0.0
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-01
+ * @version 0.2.5
  * @brief   AUTOSAR RTE Interface Header for SWC: Hmi
  *
  * @details
@@ -26,12 +26,26 @@
  *     Rte_Hmi.c writes it via Rte_Buffers_Set_BtnValue(); Rte_PcComMgr.c
  *     reads it via Rte_Buffers_Get_BtnValue(). Neither includes the other's
  *     RTE header.
+ *   • RpDio.UsrBtn does NOT represent SWC-to-SWC communication: it targets
+ *     a Dio pin through the BSW (DioIf). Per AUTOSAR RTE conventions,
+ *     Rte_Read/Rte_Write are reserved for application-layer SWC-to-SWC
+ *     communication; any BSW-bound access must use Rte_Call instead.
+ *     RpDio.UsrBtn is therefore exposed via Rte_Call_RpDio_UsrBtn(), not
+ *     Rte_Read_RpDio_UsrBtn().
  *
  * @par Revision History:
  * |---------|------------|------------------|--------------------------------------|
  * | Version | Date       | Author           | Description                          |
  * |---------|------------|------------------|--------------------------------------|
- * | 1.0.0   | 2025-06-17 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.5   | 2025-07-01 | A.Rezapour       | RpDio.UsrBtn is BSW-bound (Dio pin   |
+ * |         |            |                  | access via DioIf), not SWC-to-SWC |
+ * |         |            |                  | communication: changed from          |
+ * |         |            |                  | Rte_Read_RpDio_UsrBtn to             |
+ * |         |            |                  | Rte_Call_RpDio_UsrBtn so Rte_Read is |
+ * |         |            |                  | reserved strictly for SWC-to-SWC     |
+ * |         |            |                  | signals (PpBtnValue/BtnValue is      |
+ * |         |            |                  | unaffected).                         |
  * |---------|------------|------------------|--------------------------------------|
  */
 
@@ -79,12 +93,15 @@ typedef float Rte_DT_PpBtnValue_BtnValue_t;
  *============================================================================*/
 
 /**
- * @brief  Read UsrBtn digital state from the RpDio require port.
+ * @brief  Call (read) UsrBtn digital state from the RpDio require port.
+ * @details
+ * RpDio.UsrBtn targets a Dio pin through the BSW (DioIf), not another
+ * SWC; this is therefore exposed via Rte_Call, not Rte_Read.
  * @param  data  Pointer to receive the boolean button state.
  * @return Std_ReturnType  RTE_E_OK on success.
  */
-#define Rte_Read_RpDio_UsrBtn(data) \
-    Rte_Read_Hmi_RpDio_UsrBtn(data)
+#define Rte_Call_RpDio_UsrBtn(data) \
+    Rte_Call_Hmi_RpDio_UsrBtn(data)
 
 /*==============================================================================
  *  PROVIDE PORT MACROS  — Rte_Write_<Port>_<Signal>()
@@ -108,7 +125,7 @@ typedef float Rte_DT_PpBtnValue_BtnValue_t;
  *============================================================================*/
 
 /* RpDio */
-extern Std_ReturnType Rte_Read_Hmi_RpDio_UsrBtn(Rte_DT_RpDio_UsrBtn_t *data);
+extern Std_ReturnType Rte_Call_Hmi_RpDio_UsrBtn(Rte_DT_RpDio_UsrBtn_t *data);
 
 /* PpBtnValue */
 extern Std_ReturnType Rte_Write_Hmi_PpBtnValue_BtnValue(Rte_DT_PpBtnValue_BtnValue_t data);

@@ -1,8 +1,8 @@
 /**
  * @file    PcComMgr.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-17
- * @version 1.0.0
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-06-23
+ * @version 0.2.4
  * @brief   AUTOSAR SWC Interface Header: PcComMgr
  *
  * @details
@@ -39,14 +39,14 @@
  *                TxConstF2   (float)    TX constant float field
  *
  * Permitted includes (in PcComMgr.c): PcComMgr.h, Rte_PcComMgr.h
- * Forbidden:    Eth_UdpServer.h, Eth_Config.h, Eth_HwAb.h, Mcal.h,
+ * Forbidden:    Eth_UdpServer.h, Eth_Cfg.h, Eth_HwAb.h, Mcal.h,
  *               Rte_HmiPcComIf.h, Rte_PcComEthIf.h, Rte_HmiDioIf.h
  *
  * @par Revision History:
  * |---------|------------|------------------|--------------------------------------|
  * | Version | Date       | Author           | Description                          |
  * |---------|------------|------------------|--------------------------------------|
- * | 1.0.0   | 2025-06-17 | A.Rezapour       | Initial consolidated release         |
+ * | 0.2.4   | 2025-06-23 | A.Rezapour       | Initial consolidated release         |
  * |---------|------------|------------------|--------------------------------------|
  */
 

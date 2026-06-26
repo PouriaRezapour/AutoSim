@@ -86,7 +86,7 @@
 
 
 /*
-  CMSIS-RTOS2 FreeRTOS configuration check (OS_Config.h).
+  CMSIS-RTOS2 FreeRTOS configuration check (OS_Cfg.h).
 
   Note: CMSIS-RTOS API requires functions included by using following definitions.
         In case if certain API function is not used compiler will optimize it away.
@@ -185,7 +185,7 @@
 
     Alternatively, if the application does not use osThreadSuspend and
     osThreadResume they can be excluded from the image code by setting:
-    #define configUSE_OS2_THREAD_SUSPEND_RESUME 0 (in OS_Config.h)
+    #define configUSE_OS2_THREAD_SUSPEND_RESUME 0 (in OS_Cfg.h)
   */
   #if (configUSE_OS2_THREAD_SUSPEND_RESUME == 1)
     #error "Definition INCLUDE_vTaskSuspend must equal 1 to implement Kernel Information and Control API."
@@ -202,7 +202,7 @@
 
     Alternatively, if the application does not use osEventFlagsSet and osEventFlagsClear
     from the ISR their operation from ISR can be restricted by setting:
-    #define configUSE_OS2_EVENTFLAGS_FROM_ISR 0 (in OS_Config.h)
+    #define configUSE_OS2_EVENTFLAGS_FROM_ISR 0 (in OS_Cfg.h)
   */
   #if (configUSE_OS2_EVENTFLAGS_FROM_ISR == 1)
     #error "Definition INCLUDE_xTimerPendFunctionCall must equal 1 to implement Event Flags API."
@@ -218,7 +218,7 @@
 
     Alternatively, if the application does not use timer functions they can be
     excluded from the image code by setting:
-    #define configUSE_OS2_TIMER 0 (in OS_Config.h)
+    #define configUSE_OS2_TIMER 0 (in OS_Cfg.h)
   */
   #if (configUSE_OS2_TIMER == 1)
     #error "Definition configUSE_TIMERS must equal 1 to implement Timer Management API."
@@ -234,7 +234,7 @@
 
     Alternatively, if the application does not use mutex functions they can be
     excluded from the image code by setting:
-    #define configUSE_OS2_MUTEX 0 (in OS_Config.h)
+    #define configUSE_OS2_MUTEX 0 (in OS_Cfg.h)
   */
   #if (configUSE_OS2_MUTEX == 1)
     #error "Definition configUSE_MUTEXES must equal 1 to implement Mutex Management API."
@@ -259,7 +259,7 @@
 
     Alternatively, if the application does not use thread flags functions they can be
     excluded from the image code by setting:
-    #define configUSE_OS2_THREAD_FLAGS 0 (in OS_Config.h)
+    #define configUSE_OS2_THREAD_FLAGS 0 (in OS_Cfg.h)
   */
   #if (configUSE_OS2_THREAD_FLAGS == 1)
     #error "Definition configUSE_TASK_NOTIFICATIONS must equal 1 to implement Thread Flags API."
@@ -274,7 +274,7 @@
 
     Alternatively, if the application does not use osThreadEnumerate it can be
     excluded from the image code by setting:
-    #define configUSE_OS2_THREAD_ENUMERATE 0 (in OS_Config.h)
+    #define configUSE_OS2_THREAD_ENUMERATE 0 (in OS_Cfg.h)
   */
   #if (configUSE_OS2_THREAD_ENUMERATE == 1)
     #error "Definition configUSE_TRACE_FACILITY must equal 1 to implement osThreadEnumerate."

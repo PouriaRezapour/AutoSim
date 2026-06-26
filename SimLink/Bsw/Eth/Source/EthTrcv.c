@@ -1,6 +1,6 @@
 /**
  * @file    EthTrcv.c
- * @author  Ali Rezapour
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-10
  * @version 0.1.0
  * @brief   LAN8742 10/100 Ethernet PHY transceiver driver implementation.
@@ -23,7 +23,7 @@
  * |---------|------------|---------------|--------------------------------------|
  * | Version | Date       | Author        | Description                          |
  * |---------|------------|---------------|--------------------------------------|
- * | 0.1.0   | 2025-05-10 | Ali Rezapour  | Initial release                      |
+ * | 0.1.0   | 2025-05-10 | A.Rezapour    | Initial release                      |
  * |---------|------------|---------------|--------------------------------------|
  */
 

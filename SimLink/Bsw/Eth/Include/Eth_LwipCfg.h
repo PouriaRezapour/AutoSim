@@ -1,6 +1,6 @@
 /**
  * @file    Eth_LwipCfg.h
- * @author  Ali Rezapour
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-10
  * @version 0.1.0
  * @brief   lwIP stack configuration options for STM32H7xx targets.
@@ -17,7 +17,7 @@
  * |---------|------------|---------------|--------------------------------------|
  * | Version | Date       | Author        | Description                          |
  * |---------|------------|---------------|--------------------------------------|
- * | 0.1.0   | 2025-05-10 | Ali Rezapour  | Initial release                      |
+ * | 0.1.0   | 2025-05-10 | A.Rezapour    | Initial release                      |
  * |---------|------------|---------------|--------------------------------------|
  */
 

@@ -1,8 +1,8 @@
 /**
  * @file    DevTstMgr.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-07
- * @version 0.2.3
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-08
+ * @version 0.2.6
  * @brief   Development test manager — aggregates all DevTst sub-modules.
  *
  * @details
@@ -12,11 +12,14 @@
  *
  * Adding a new test module (e.g. DevTst_Spi):
  *   1. Create DevTst_Spi.c / .h following the DevTst_CanTx pattern.
- *   2. Add DEVTST_SPI_ENABLED to DevTst_Config.h.
+ *   2. Add DEVTST_SPI_ENABLED to DevTst_Cfg.h.
  *   3. Include DevTst_Spi.h and call its functions in DevTstMgr.c under
  *      a matching #if DEVTST_ENABLED && DEVTST_SPI_ENABLED guard.
+ *   4. If the module uses a new task rate, add a matching
+ *      DevTstMgr_Run_<rate>() prototype here and implement it in
+ *      DevTstMgr.c.
  *
- * Compile-time gate: DEVTST_ENABLED must be 1 in DevTst_Config.h for any
+ * Compile-time gate: DEVTST_ENABLED must be 1 in DevTst_Cfg.h for any
  * code in this module to be compiled.
  *
  * @par Revision History:
@@ -27,6 +30,8 @@
  * | 0.2.3   | 2025-06-07 | A.Rezapour       | The module now uses the project's    |
  * |         |            |                  | standard types defined in            |
  * |         |            |                  | Std_Types.h.                         |
+ * | 0.2.6   | 2025-07-08 | A.Rezapour       | Added DevTstMgr_Run_100ms()          |
+ * |         |            |                  | prototype for the DioFlip module.    |
  * |---------|------------|------------------|--------------------------------------|
  */
 
@@ -36,18 +41,18 @@
 /* ─── Includes ────────────────────────────────────────────────────────────── */
 
 #include "Std_Types.h"
-#include "DevTst_Config.h"
+#include "DevTst_Cfg.h"
 
 /* ─── Module Info ─────────────────────────────────────────────────────────── */
 
-#define DEVTSTMGR_VENDOR_ID            0xFFFFu   /* Project vendor identifier  */
-#define DEVTSTMGR_MODULE_ID            2050u      /* DevTst framework module ID */
+#define DEVTSTMGR_VENDOR_ID            0xFFFFu   /**< Project vendor identifier  */
+#define DEVTSTMGR_MODULE_ID            2050u      /**< DevTst framework module ID */
 
 /* ─── Version Info ────────────────────────────────────────────────────────── */
 
 #define DEVTSTMGR_MAJOR_VERSION        0x00u
 #define DEVTSTMGR_MINOR_VERSION        0x02u
-#define DEVTSTMGR_PATCH_VERSION        0x03u
+#define DEVTSTMGR_PATCH_VERSION        0x04u
 
 /* ─── Macros & Constants ──────────────────────────────────────────────────── */
 
@@ -77,10 +82,17 @@ void DevTstMgr_Init(void);
  */
 void DevTstMgr_Run_10ms(void);
 
+/**
+ * @brief  100 ms periodic execution for all registered DevTst sub-modules.
+ * @note   Called every 100 ms by DevTst_Run_100ms().
+ */
+void DevTstMgr_Run_100ms(void);
+
 #else /* DEVTST_ENABLED == 0 */
 
 #define DevTstMgr_Init()           ((void)0)
 #define DevTstMgr_Run_10ms()       ((void)0)
+#define DevTstMgr_Run_100ms()      ((void)0)
 
 #endif /* DEVTST_ENABLED */
 

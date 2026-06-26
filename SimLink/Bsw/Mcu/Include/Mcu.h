@@ -1,6 +1,6 @@
 /**
  * @file    Mcu.h
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-05-04
  * @version 0.1.2
  * @brief   System-level initialization interface for hardware and peripherals.

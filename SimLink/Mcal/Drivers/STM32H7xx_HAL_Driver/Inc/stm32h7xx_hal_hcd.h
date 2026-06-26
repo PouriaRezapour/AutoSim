@@ -54,7 +54,7 @@ typedef enum
 } HCD_StateTypeDef;
 
 typedef USB_OTG_GlobalTypeDef   HCD_TypeDef;
-typedef USB_OTG_CfgTypeDef      HCD_InitTypeDef;
+typedef USB_OTG_ConfigTypeDef      HCD_InitTypeDef;
 typedef USB_OTG_HCTypeDef       HCD_HCTypeDef;
 typedef USB_OTG_URBStateTypeDef HCD_URBStateTypeDef;
 typedef USB_OTG_HCStateTypeDef  HCD_HCStateTypeDef;

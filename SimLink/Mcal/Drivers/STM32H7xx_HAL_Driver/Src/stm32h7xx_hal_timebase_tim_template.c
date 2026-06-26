@@ -28,7 +28,7 @@
     This file must be copied to the application folder and modified as follows:
     (#) Rename it to 'stm32h7xx_hal_timebase_tim.c'
     (#) Add this file and the TIM HAL drivers to your project and uncomment
-       HAL_TIM_MODULE_ENABLED define in Mcal_Config.h
+       HAL_TIM_MODULE_ENABLED define in Mcal_Cfg.h
 
   @endverbatim
   ******************************************************************************

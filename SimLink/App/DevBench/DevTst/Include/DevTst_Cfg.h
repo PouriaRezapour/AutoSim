@@ -1,13 +1,13 @@
 /**
  * @file    DevTst_Config.h
- * @author  A.Rezapour (Pouria)
- * @date    2025-06-07
- * @version 0.2.3
+ * @author  Ali Rezapour (Pouria)
+ * @date    2025-07-08
+ * @version 0.2.6
  * @brief   Compile-time configuration for the DevTst framework.
  *
  * @details
  * This header is the single location where DevTst modules are enabled or
- * disabled.  It follows the same pattern as Os_TasksConfig.h: each flag is
+ * disabled.  It follows the same pattern as Os_TasksCfg.h: each flag is
  * a named #define set to 1 (enabled) or 0 (disabled).
  *
  * Master switch:
@@ -32,6 +32,8 @@
  * | 0.2.3   | 2025-06-07 | A.Rezapour       | The module now uses the project's    |
  * |         |            |                  | standard types defined in            |
  * |         |            |                  | Std_Types.h.                         |
+ * | 0.2.6   | 2025-07-08 | A.Rezapour       | Added DEVTST_DIOFLIP_ENABLED for     |
+ * |         |            |                  | LED1 toggle test module.             |
  * |---------|------------|------------------|--------------------------------------|
  */
 
@@ -51,7 +53,7 @@
 
 #define DEVTST_MAJOR_VERSION           0x00u
 #define DEVTST_MINOR_VERSION           0x02u
-#define DEVTST_PATCH_VERSION           0x03u
+#define DEVTST_PATCH_VERSION           0x04u
 
 /* ─── Master Switch ───────────────────────────────────────────────────────── */
 
@@ -83,17 +85,37 @@
  */
 #define DEVTST_CANTX_ENABLED           1
 
+/**
+ * @brief  Enable the DIO flip periodic test (DevTst_DioFlip).
+ *         Toggles LED1 (HWAB_DIO_LED1) via DioIf_Toggle() every 100 ms,
+ *         producing a 5 Hz blink that confirms DIO HwAb end-to-end operation.
+ *         Has no effect when DEVTST_ENABLED is 0.
+ *
+ * |-------|--------------------------------------|
+ * | Value | Effect                               |
+ * |-------|--------------------------------------|
+ * |   1   | DevTst_DioFlip compiled in.         |
+ * |   0   | DevTst_DioFlip excluded.            |
+ * |-------|--------------------------------------|
+ */
+#define DEVTST_DIOFLIP_ENABLED         1
+
 /* Add future per-module switches here, e.g.:
  * #define DEVTST_SPI_ENABLED          0
  * #define DEVTST_CANTXRX_ENABLED      0
  * #define DEVTST_UART_ENABLED         0
  */
 
-/* ─── Consistency Check ───────────────────────────────────────────────────── */
+/* ─── Consistency Checks ──────────────────────────────────────────────────── */
 
 #if !DEVTST_ENABLED && DEVTST_CANTX_ENABLED
 #undef DEVTST_CANTX_ENABLED
 #define DEVTST_CANTX_ENABLED           0
+#endif
+
+#if !DEVTST_ENABLED && DEVTST_DIOFLIP_ENABLED
+#undef DEVTST_DIOFLIP_ENABLED
+#define DEVTST_DIOFLIP_ENABLED         0
 #endif
 
 #endif /* DEVTST_CONFIG_H */

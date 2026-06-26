@@ -1,6 +1,6 @@
 /**
  * @file    DevTst_CanTx.c
- * @author  A.Rezapour (Pouria)
+ * @author  Ali Rezapour (Pouria)
  * @date    2025-06-07
  * @version 0.2.3
  * @brief   Development test module for CAN TX verification — implementation.
@@ -31,7 +31,7 @@
  */
 
 #include "Std_Types.h"
-#include "DevTst_Config.h"
+#include "DevTst_Cfg.h"
 
 #if DEVTST_ENABLED && DEVTST_CANTX_ENABLED
 
