@@ -94,12 +94,6 @@ AutoSim/
 ### Network Configuration
 The board's default static IP and the PC's expected IP are defined in `Bsw/Eth/Include/Eth_Config.h`. Update these to match your PC's network setup before connecting over Ethernet.
 
-## Project Status
-
-This is an actively developed project (modules are individually versioned in their file headers). Notable in-progress areas:
-- `CmdSigMgr` and `VlvSigObs` SenSim modules are scaffolded but not yet implemented.
-- SPI is wired up at the driver level but not yet integrated into a software component.
-
 ## Coding Conventions
 
 `Doc/Templates/` contains the canonical file/module templates and naming-convention reference used throughout the codebase (`Code Template/`, `Naming Conventions/`). New modules should follow these for header structure, port-naming (`Pp`/`Rp` prefixes), and revision-history tables.
